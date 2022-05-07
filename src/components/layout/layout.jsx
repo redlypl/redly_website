@@ -6,6 +6,8 @@ import {
     LayoutWrapper,
 
 } from "./layout.style"
+import Footer from "../footer/footer"
+import Navbar from "../navbar/navbar"
 
 const Layout = (props) => {
     return (
@@ -14,7 +16,9 @@ const Layout = (props) => {
             <Helmet>
                 <title>Redly - Agencja Reklamowa</title>
             </Helmet>
+            <Navbar />
             { props.children }
+            <Footer />
         </LayoutWrapper>
     )
 }
