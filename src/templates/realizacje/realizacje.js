@@ -8,7 +8,7 @@ import {
 
 } from "../../styles/templates/realizacje/realizacje.style"
 
-const Oferta = () => {
+const Realizacje = () => {
     return (
         <RealizacjeWrapper>
             <HeaderWrapper>
@@ -29,4 +29,4 @@ const Oferta = () => {
     )
 }
 
-export default Oferta
+export default Realizacje
