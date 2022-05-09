@@ -1,8 +1,8 @@
 import styled from "styled-components"
 import { theme } from "../../theme"
 
-export const RealizacjeWrapper = styled.div`
-    background-color: forestgreen;
+export const ArticlesWrapper = styled.div`
+    background-color: lightskyblue;
     padding: 50px 200px;
     display: flex;
     flex-direction: column;
@@ -23,16 +23,16 @@ export const RealizacjeWrapper = styled.div`
     }
 `
 export const HeaderWrapper = styled.div`
-    background-color: fuchsia;
+    background-color: antiquewhite;
     padding: 25px 0;
 `
-export const RealizationsItemsWrapper = styled.div`
-    background-color: darkcyan;
+export const ArticlesItemsWrapper = styled.div`
+    background-color: lightgreen;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     gap: 5px;
     padding: 0 150px;
+    flex-wrap: wrap;
 
     @media (max-width: ${theme.breakpoint.largeDesktop}) {
         padding: 0 50px;
@@ -40,19 +40,26 @@ export const RealizationsItemsWrapper = styled.div`
     @media (max-width: ${theme.breakpoint.desktop}) {
         padding: 0;
     }
+    @media (max-width: ${theme.breakpoint.tablet}) {
+        flex-direction: column;
+    }
 `
-export const RealizationItem = styled.div`
-    background-color: honeydew;
-    height: 300px;
-    width: 100%;
+export const ArticleItem = styled.div`
+    background-color: crimson;
+    height: 350px;
+    width: 32%;
 
+    @media (max-width: ${theme.breakpoint.desktop}) {
+
+    }
     @media (max-width: ${theme.breakpoint.laptop}) {
-        height: 270px;
+        width: 49%;
     }
     @media (max-width: ${theme.breakpoint.tablet}) {
-        height: 250px;
+        width: 100%;
     }
-    @media (max-width: ${theme.breakpoint.mobile}) {
-        height: 150px;
-    }
+`
+export const BtnWrapper = styled.div`
+    background-color: burlywood;
+    padding: 20px 0;
 `

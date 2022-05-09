@@ -1,7 +1,7 @@
 import React from "react"
 
 import {
-    OfertaWrapper,
+    RealizacjeWrapper,
     HeaderWrapper,
     RealizationsItemsWrapper,
     RealizationItem,
@@ -10,7 +10,7 @@ import {
 
 const Oferta = () => {
     return (
-        <OfertaWrapper>
+        <RealizacjeWrapper>
             <HeaderWrapper>
                 header
             </HeaderWrapper>
@@ -25,7 +25,7 @@ const Oferta = () => {
                 <RealizationItem>second-item</RealizationItem>
                 <RealizationItem>third-item</RealizationItem>
             </RealizationsItemsWrapper>
-        </OfertaWrapper>
+        </RealizacjeWrapper>
     )
 }
 
