@@ -2,7 +2,6 @@ import styled from "styled-components"
 import { theme } from "../../theme"
 
 export const AboutWrapper = styled.div`
-    background-color: hotpink;
     padding: 50px 200px;
     display: flex;
     flex-direction: column;
@@ -63,6 +62,6 @@ export const ImagePlace = styled.div`
     height: 100%;
 `
 export const BtnWrapper = styled.div`
-    background-color: ghostwhite;
+    background-color: pink;
     padding: 20px 0;
 `

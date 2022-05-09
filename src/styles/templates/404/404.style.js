@@ -2,7 +2,6 @@ import styled from "styled-components"
 import { theme } from "../../../styles/theme"
 
 export const HeroWrapper = styled.div`
-    background-color: blueviolet;
     height: 800px;
     width: 100%;
     display: flex;

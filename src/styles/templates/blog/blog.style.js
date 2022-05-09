@@ -2,7 +2,6 @@ import styled from "styled-components"
 import { theme } from "../../theme"
 
 export const ArticlesWrapper = styled.div`
-    background-color: lightskyblue;
     padding: 50px 200px;
     display: flex;
     flex-direction: column;

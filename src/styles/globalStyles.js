@@ -23,5 +23,6 @@ export const GlobalStyle = createGlobalStyle`
         max-width: 1920px;
         margin-left: auto;
         margin-right: auto;
+        background: transparent linear-gradient(90deg, #FFFFFF 0%, #E6E6E6 100%) 0% 0% no-repeat padding-box;;
     }
 `
