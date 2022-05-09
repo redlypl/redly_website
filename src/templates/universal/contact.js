@@ -10,12 +10,17 @@ import {
 
 } from "../../styles/templates/universal/contact.style"
 
-const Contact = () => {
+const Contact = (props) => {
+
+  let underHeader = '' 
+
+  if ( props.isIndex === true ) {
+    underHeader = <HeaderWrapper> header </HeaderWrapper>
+  }
+
   return (
     <ContactWrapper>
-      <HeaderWrapper>
-        header
-      </HeaderWrapper>
+      { underHeader }
       <UnderHeaderWrapper>
         under header<br />
         two lines

@@ -2,16 +2,16 @@ import React from "react"
 
 import Layout from "../components/layout/layout"
 
-import Oferta from "../templates/oferta/oferta"
+import Realizacje from "../templates/realizacje/realizacje"
 import Contact from "../templates/universal/contact"
 
-const OfertaPage = () => {
+const RealizacjePage = () => {
     return (
         <Layout>
-            <Oferta />
+            <Realizacje />
             <Contact />
         </Layout>
     )
 }
 
-export default OfertaPage
+export default RealizacjePage

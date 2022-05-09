@@ -9,7 +9,7 @@ import Newsletter from "../templates/index/newsletter"
 import About from "../templates/index/about"
 import Contact from "../templates/universal/contact"
 
-const Index = () => {
+const IndexPage = () => {
   return (
     <Layout>
       <Hero />
@@ -17,9 +17,9 @@ const Index = () => {
       <Realizations />
       <Newsletter />
       <About />
-      <Contact />
+      <Contact isIndex={ true } />
     </Layout>
   )
 }
 
-export default Index
+export default IndexPage
