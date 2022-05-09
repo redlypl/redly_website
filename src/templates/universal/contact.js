@@ -8,7 +8,7 @@ import {
   ImageDeco,
   ContactFormWrapper,
 
-} from "../../styles/templates/index/contact.style"
+} from "../../styles/templates/universal/contact.style"
 
 const Contact = () => {
   return (

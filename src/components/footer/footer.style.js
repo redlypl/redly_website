@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const FooterWrapper = styled.div`
-    background-color: aquamarine;
+    background-color: violet;
     height: 65px;
     display: flex;
     justify-content: center;

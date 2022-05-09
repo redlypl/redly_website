@@ -7,7 +7,7 @@ import Articles from "../templates/index/articles"
 import Realizations from "../templates/index/realizations"
 import Newsletter from "../templates/index/newsletter"
 import About from "../templates/index/about"
-import Contact from "../templates/index/contact"
+import Contact from "../templates/universal/contact"
 
 const Index = () => {
   return (
