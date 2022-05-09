@@ -1,8 +1,34 @@
 import React from "react"
 
+import {
+  ContactWrapper,
+  HeaderWrapper,
+  UnderHeaderWrapper,
+  ContactBody,
+  ImageDeco,
+  ContactFormWrapper,
+
+} from "../../styles/templates/index/contact.style"
+
 const Contact = () => {
   return (
-    <p>contact</p>
+    <ContactWrapper>
+      <HeaderWrapper>
+        header
+      </HeaderWrapper>
+      <UnderHeaderWrapper>
+        under header<br />
+        two lines
+      </UnderHeaderWrapper>
+      <ContactBody>
+        <ImageDeco>
+          deco image place
+        </ImageDeco>
+        <ContactFormWrapper>
+          contact form
+        </ContactFormWrapper>
+      </ContactBody>
+    </ContactWrapper>
   )
 }
 

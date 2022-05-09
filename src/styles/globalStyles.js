@@ -13,10 +13,15 @@ import "@fontsource/poppins/900.css"
 export const GlobalStyle = createGlobalStyle`
     *, *::before, *::after {
         box-sizing: border-box;
+        transition: 0.2s;
     }
     body {
         padding: 0;
         margin: 0;
         font-family: "Poppins", sans-serif;
+        background-color: aquamarine;
+        max-width: 1920px;
+        margin-left: auto;
+        margin-right: auto;
     }
 `

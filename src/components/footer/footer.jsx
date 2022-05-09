@@ -1,8 +1,15 @@
 import React from "react"
 
+import {
+  FooterWrapper,
+  FooterContent
+} from "./footer.style"
+
 const Footer = () => {
   return (
-    <p>footer</p>
+    <FooterWrapper>
+      <FooterContent>footer-companyname-since-smicons</FooterContent>
+    </FooterWrapper>
   )
 }
 
