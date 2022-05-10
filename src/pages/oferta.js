@@ -2,16 +2,16 @@ import React from "react"
 
 import Layout from "../components/layout/layout"
 
-import NotFound from "../templates/404/404"
+import Oferta from "../templates/oferta/oferta"
 import Contact from "../templates/universal/contact"
 
-const NotFoundPage = () => {
+const OfertaPage = () => {
     return (
         <Layout>
-            <NotFound />
+            <Oferta />
             <Contact />
         </Layout>
     )
 }
 
-export default NotFoundPage
+export default OfertaPage

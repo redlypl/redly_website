@@ -17,7 +17,13 @@ module.exports = {
   }, "gatsby-plugin-image", "gatsby-plugin-react-helmet", "gatsby-plugin-sitemap", {
     resolve: 'gatsby-plugin-manifest',
     options: {
-      "icon": "src/images/icon.png"
+      "icon": "src/images/icon.png",
+      "name": "Redly - Agencja Reklamowa",
+      "short_name": `Agencja Reklamowa z nowoczesnym podejściem do marketingu`,
+      "start_url": `/`,
+      //"background_color": `#f7f0eb`,
+      //"theme_color": `#a2466c`,
+      "display": `standalone`,
     }
   }, "gatsby-plugin-mdx", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
     resolve: 'gatsby-source-filesystem',

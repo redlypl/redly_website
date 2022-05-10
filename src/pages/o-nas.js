@@ -2,16 +2,16 @@ import React from "react"
 
 import Layout from "../components/layout/layout"
 
-import NotFound from "../templates/404/404"
+import ONas from "../templates/o-nas/o-nas"
 import Contact from "../templates/universal/contact"
 
-const NotFoundPage = () => {
+const ONasPage = () => {
     return (
         <Layout>
-            <NotFound />
+            <ONas />
             <Contact />
         </Layout>
     )
 }
 
-export default NotFoundPage
+export default ONasPage
