@@ -7,7 +7,7 @@ import {
 
 } from "./layout.style"
 import Footer from "../footer/footer"
-import Navbar from "../navbar/navbar"
+import Navbar from "../nav/nav"
 
 const Layout = (props) => {
     return (

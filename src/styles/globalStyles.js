@@ -25,4 +25,23 @@ export const GlobalStyle = createGlobalStyle`
         margin-right: auto;
         background: transparent linear-gradient(90deg, #FFFFFF 0%, #E6E6E6 100%) 0% 0% no-repeat padding-box;;
     }
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #fff;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: black;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: black;
+    }
+    html {
+        scrollbar-color: black #0a0a0a;
+        scrollbar-width: thin;
+    }
 `
