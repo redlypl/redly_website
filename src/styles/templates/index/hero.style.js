@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 import { theme } from "../../../styles/theme"
 
 import SculptureDecoBg from "../../../images/heroImg/sculptureDecoX.png"
@@ -51,6 +51,7 @@ export const Bottom = styled.div`
     height: 50px;
     display: flex;
     justify-content: space-between;
+    overflow: hidden;
 
     @media (max-width: ${theme.breakpoint.tablet}) {
         flex-direction: column;
@@ -68,6 +69,7 @@ export const ContentSide = styled.div`
     justify-content: center;
     align-items: flex-start;
     gap: 10px;
+    overflow: hidden;
     
     @media (max-width: ${theme.breakpoint.desktop}) {
 
@@ -83,6 +85,7 @@ export const ContentSide = styled.div`
 export const SculptureSide = styled.div`
     width: calc( 50% - 5px );
     height: 600px;
+    overflow: hidden;
 
     @media (max-width: ${theme.breakpoint.largeDesktop}) {
 
@@ -111,9 +114,8 @@ export const Sculpture = styled.div`
     background-repeat: no-repeat;
     background-image: url(${SculptureBg});
     background-position: center;
-    animation-name: moving;
-    animation-duration: 7s;
-    animation-iteration-count: infinite;
+    animation-name: slideSculpN;
+    animation-duration: 2s;
 
     @media (max-width: ${theme.breakpoint.desktop}) {
 
@@ -123,22 +125,19 @@ export const Sculpture = styled.div`
 
     }
     @media (max-width: ${theme.breakpoint.tablet}) {
-        width: 170px;
+        width: 160px;
         background-size: 100%;
     }
 
-    @keyframes moving {
+    @keyframes slideSculpN {
         0% {
-            transform: translateY(0) rotate(0);
-        }
-        50% {
-            transform: translateY(10px) rotate(2deg);
+            background-position: 1000px center;
         }
         75% {
-            transform: translateY(-10px) rotate(-2deg);
+            background-position: calc( 50% + -25px ) center;
         }
         100% {
-            transform: translateY(0) rotate(0);
+            background-position: center;
         }
     }
 `
@@ -152,6 +151,8 @@ export const DecoSculpture = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    animation-name: bgSlideD;
+    animation-duration: 2s;
 
     @media (max-width: ${theme.breakpoint.desktop}) {
 
@@ -163,9 +164,31 @@ export const DecoSculpture = styled.div`
         width: 280px;
         background-size: 100%;
     }
+
+    @keyframes bgSlideD {
+        0% {
+            background-position: 1000px center;
+        }
+        75% {
+            background-position: calc( 50% + -25px ) center;
+        }
+        100% {
+            background-position: center;
+        }
+    }
 `
 export const SocialMediaSection = styled.div`
+    animation-name: slideBottomG;
+    animation-duration: 1.5s;
 
+    @keyframes slideBottomG {
+        from {
+            transform: translateY(200px);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
 `
 export const PoweredBy = styled.div`
     display: flex;
@@ -173,9 +196,20 @@ export const PoweredBy = styled.div`
     font-size: 12px;
     gap: 20px;
     color: ${theme.color.darkGray};
+    animation-name: slideBottomG;
+    animation-duration: 2s;
 
     @media (max-width: ${theme.breakpoint.tablet}) {
         justify-content: center;
+    }
+
+    @keyframes slideBottomG {
+        from {
+            transform: translateY(200px);
+        }
+        to {
+            transform: translateY(0);
+        }
     }
 `
 export const WroconsultLogo = styled.a`
@@ -220,24 +254,6 @@ export const SocialItem = styled.a`
         right: -5px;
         top: -32px;
         opacity: 1;
-    }
-`
-export const WrapperContent = styled.div`
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-
-    @media (max-width: ${theme.breakpoint.largeDesktop}) {
-        width: 80%;
-    }
-    @media (max-width: ${theme.breakpoint.desktop}) {
-        width: 90%;
-    }
-    @media (max-width: ${theme.breakpoint.tablet}) {
-        width: 100%;
-        align-items: center;
     }
 `
 export const Header = styled.div`

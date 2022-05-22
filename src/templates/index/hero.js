@@ -1,7 +1,6 @@
 import React from "react"
-import AppleEmojis from "../../components/apple-emojis/apple-emojis"
-import { EmojiData } from "../../components/apple-emojis/emojiData"
 import Button from "../../components/button/button"
+import { motion } from "framer-motion";
 
 import {
   HeroWrapper,
@@ -14,14 +13,15 @@ import {
   WroconsultLogo,
   Sculpture,
   DecoSculpture,
-  WrapperContent,
   Header,
   UnderHeader,
   SocialItem,
-
-
-  
 } from "../../styles/templates/index/hero.style"
+import {
+  HeaderAnimation,
+  UnderHeaderAnimation,
+  ButtonAnimation,
+} from "../../styles/animations/framer-animations"
 
 const HeroData = {
   Header: 'Nowoczesna agencja reklamowa ',
@@ -49,9 +49,27 @@ const Hero = () => {
     <HeroWrapper>
       <Top>
         <ContentSide>
-          <Header>{HeroData.Header}</Header>
-          <UnderHeader>{HeroData.UnderHeader}</UnderHeader>
-          <Button name={HeroData.HeroBtn} to="/oferta" />
+          <motion.div
+            variants={HeaderAnimation}
+            initial="initial"
+            animate="animate"
+          >
+            <Header>{HeroData.Header}</Header>
+          </motion.div>
+          <motion.div
+            variants={UnderHeaderAnimation}
+            initial="initial"
+            animate="animate"
+          >
+            <UnderHeader>{HeroData.UnderHeader}</UnderHeader>
+          </motion.div>
+          <motion.div
+            variants={ButtonAnimation}
+            initial="initial"
+            animate="animate"
+          >
+            <Button name={HeroData.HeroBtn} to="/oferta" />
+          </motion.div>
         </ContentSide>
         <SculptureSide>
           <DecoSculpture>
