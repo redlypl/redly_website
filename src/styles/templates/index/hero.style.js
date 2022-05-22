@@ -10,6 +10,7 @@ export const HeroWrapper = styled.div`
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     padding: 50px 200px 100px 200px;
     gap: 10px;
 
@@ -20,19 +21,28 @@ export const HeroWrapper = styled.div`
         padding: 50px 15px 100px 15px;
     }
     @media (max-width: ${theme.breakpoint.tablet}) {
-        padding: 30px;
+        padding: 20px;
         flex-wrap: nowrap;
         flex-direction: column;
-        gap: 50px;
+        justify-content: flex-start;
+        gap: 40px;
+        height: 750px;
     }
 `
 export const Top = styled.div`
     display: flex;
     height: 600px;
+    width: 80%;
+    gap: 10px;
     
+    @media (max-width: ${theme.breakpoint.desktop}) {
+        width: 90%;
+    }
+    @media (max-width: ${theme.breakpoint.laptop}) {
+        width: 100%;
+    }
     @media (max-width: ${theme.breakpoint.tablet}) {
         flex-direction: column-reverse;
-        gap: 20px;
     }
 `
 export const Bottom = styled.div`
@@ -41,50 +51,53 @@ export const Bottom = styled.div`
     height: 50px;
     display: flex;
     justify-content: space-between;
+
     @media (max-width: ${theme.breakpoint.tablet}) {
         flex-direction: column;
         text-align: center;
-        height: 150px;
+        height: 100px;
         gap: 25px;
         margin-top: 0;
     }
 `
 export const ContentSide = styled.div`
-    width: calc( 60% - 5px );
+    width: calc( 50% - 5px );
     height: 600px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
+    align-items: flex-start;
+    gap: 10px;
     
     @media (max-width: ${theme.breakpoint.desktop}) {
-        align-items: center;
-        width: calc( 50% - 5px );
+
     }
     @media (max-width: ${theme.breakpoint.laptop}) {
-        align-items: center;
+       
     }
     @media (max-width: ${theme.breakpoint.tablet}) {
         width: 100%;
-        justify-content: left;
+        height: calc( 50% - 5px );
     }
 `
 export const SculptureSide = styled.div`
-    width: calc( 40% - 5px );
+    width: calc( 50% - 5px );
     height: 600px;
-    position: relative;
-    background-color: rgba(200, 200, 200);
 
     @media (max-width: ${theme.breakpoint.largeDesktop}) {
+
     }
     @media (max-width: ${theme.breakpoint.desktop}) {
-        width: calc( 50% - 5px );
+    
     }
     @media (max-width: ${theme.breakpoint.laptop}) {
+
     }
     @media (max-width: ${theme.breakpoint.tablet}) {
         width: 100%;
-        
+        height: calc( 50% - 5px );
+        display: flex;
+        justify-content: center;
     }
     @media (max-width: ${theme.breakpoint.mobile}) {
 
@@ -93,83 +106,62 @@ export const SculptureSide = styled.div`
 `
 export const Sculpture = styled.div`
     height: 100%;
-    width: 400px;
+    width: 70%;
     background-size: 65%;
     background-repeat: no-repeat;
     background-image: url(${SculptureBg});
     background-position: center;
-    position: absolute;
-    z-index: 50;
-    top: 50%;
-    left: 5px;
-    transform: translateY(-50%);
     animation-name: moving;
-    animation-duration: 5s;
+    animation-duration: 7s;
     animation-iteration-count: infinite;
 
     @media (max-width: ${theme.breakpoint.desktop}) {
-        left: 51%;
-        animation-name: movingMobile;
+
     }
     @media (max-width: ${theme.breakpoint.laptop}) {
-        width: 230px;
-        background-size: 85%;
+
+
     }
     @media (max-width: ${theme.breakpoint.tablet}) {
-        width: 200px;
+        width: 170px;
+        background-size: 100%;
     }
 
     @keyframes moving {
         0% {
-            transform: translateY(-50%) rotate(0);
+            transform: translateY(0) rotate(0);
         }
         50% {
-            transform: translateY(-47%) rotate(2deg);
+            transform: translateY(10px) rotate(2deg);
         }
         75% {
-            transform: translateY(-51%) rotate(-2deg);
+            transform: translateY(-10px) rotate(-2deg);
         }
         100% {
-            transform: translateY(-50%) rotate(0);
-        }
-    }
-    @keyframes movingMobile {
-        0% {
-            transform: translate(-50%, -50%) rotate(0);
-        }
-        50% {
-            transform: translate(-50%, -47%) rotate(2deg);
-        }
-        75% {
-            transform: translate(-50%, -51%) rotate(-2deg);
-        }
-        100% {
-            transform: translate(-50%, -50%) rotate(0);
+            transform: translateY(0) rotate(0);
         }
     }
 `
 export const DecoSculpture = styled.div`
     background-image: url(${SculptureDecoBg});
-    background-size: 100%;
+    background-size: 70%;
     background-repeat: no-repeat;
     background-position: center;
-    height: 400px;
-    width: 400px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     @media (max-width: ${theme.breakpoint.desktop}) {
-        left: 50%;
-        transform: translate(-50%, -50%);
+
     }
     @media (max-width: ${theme.breakpoint.laptop}) {
-        height: 300px;
-        width: 300px;
+
     }
     @media (max-width: ${theme.breakpoint.tablet}) {
-        width: 270px;
-        width: 270px;
+        width: 280px;
+        background-size: 100%;
     }
 `
 export const SocialMediaSection = styled.div`
@@ -264,8 +256,10 @@ export const Header = styled.div`
     @media (max-width: ${theme.breakpoint.tablet}) {
         font-size: 5vw;
         line-height: calc( 5vw + 10px );
-        width: 100%;
-        padding: 0 50px;
+    }
+    @media (max-width: ${theme.breakpoint.mobile}) {
+        font-size: 8.5vw;
+        line-height: calc( 8.5vw + 10px );
     }
 `
 export const UnderHeader = styled.div`
@@ -289,6 +283,9 @@ export const UnderHeader = styled.div`
     @media (max-width: ${theme.breakpoint.tablet}) {
         font-size: 2.5vw;
         line-height: calc( 2.5vw + 5px );
-        padding: 0 50px;
+    }
+    @media (max-width: ${theme.breakpoint.mobile}) {
+        font-size: 3.5vw;
+        line-height: calc( 3.5vw + 7px );
     }
 `

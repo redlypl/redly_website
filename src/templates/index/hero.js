@@ -49,15 +49,14 @@ const Hero = () => {
     <HeroWrapper>
       <Top>
         <ContentSide>
-          <WrapperContent>
-            <Header>{HeroData.Header}<AppleEmojis size={40} sizeLargeDesktop={35} sizeDesktop={30} sizeTablet={25} sizeMobile={10} url={EmojiData.coconut} /></Header>
-            <UnderHeader>{HeroData.UnderHeader}</UnderHeader>
-            <Button to="/oferta" name={HeroData.HeroBtn} />
-          </WrapperContent>
+          <Header>{HeroData.Header}</Header>
+          <UnderHeader>{HeroData.UnderHeader}</UnderHeader>
+          <Button name={HeroData.HeroBtn} to="/oferta" />
         </ContentSide>
         <SculptureSide>
-          <Sculpture />
-          <DecoSculpture />
+          <DecoSculpture>
+            <Sculpture />
+          </DecoSculpture>
         </SculptureSide>
       </Top>
       <Bottom>
