@@ -4,6 +4,7 @@ import { theme } from "../../../styles/theme"
 import SculptureDecoBg from "../../../images/heroImg/sculptureDecoX.png"
 import SculptureBg from "../../../images/heroImg/sculpture.png"
 import WroconsultLogoBg from "../../../images/wroconsult.png"
+import gradientCircle from "../../../images/gradientCircle.png"
 
 export const HeroWrapper = styled.div`
     height: 800px;
@@ -34,15 +35,32 @@ export const Top = styled.div`
     height: 600px;
     width: 80%;
     gap: 10px;
+    background-image: url(${gradientCircle});
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation-name: circleSlideV;
+    animation-duration: 1s;
     
     @media (max-width: ${theme.breakpoint.desktop}) {
         width: 90%;
     }
     @media (max-width: ${theme.breakpoint.laptop}) {
         width: 100%;
+        background-size: 50%;
     }
     @media (max-width: ${theme.breakpoint.tablet}) {
         flex-direction: column-reverse;
+        background-image: none;
+    }
+    
+    @keyframes circleSlideV {
+        from {
+            background-position: center -1000px;
+        }
+        to {
+            background-position: center;
+        }
     }
 `
 export const Bottom = styled.div`
