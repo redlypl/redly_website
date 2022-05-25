@@ -9,11 +9,17 @@ import {
 
 } from "../../styles/templates/index/realizations.style"
 
+import Header from "../../components/header/header"
+import { EmojiData } from "../../components/apple-emojis/emojiData"
+
 const Realizations = () => {
   return (
     <RealizationsWrapper>
       <HeaderWrapper>
-        header
+        <Header
+          name="Ostatnie realizacje"
+          emojiBase={EmojiData.hammer}
+        />
       </HeaderWrapper>
       <RealizationsItemsWrapper>
         <RealizationItem>first-item</RealizationItem>

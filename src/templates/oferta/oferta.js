@@ -8,11 +8,17 @@ import {
 
 } from "../../styles/templates/oferta/oferta.style"
 
+import Header from "../../components/header/header"
+import { EmojiData } from "../../components/apple-emojis/emojiData"
+
 const Oferta = () => {
     return (
         <OfertaWrapper>
         <HeaderWrapper>
-            header
+            <Header
+                name="Nasza oferta"
+                emojiBase={EmojiData.hammerAndWrench}
+            />
         </HeaderWrapper>
         <OfertaBody>
             <OfertaItem>item-1</OfertaItem>

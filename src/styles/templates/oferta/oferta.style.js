@@ -22,8 +22,12 @@ export const OfertaWrapper = styled.div`
     }
 `
 export const HeaderWrapper = styled.div`
-    background-color: fuchsia;
     padding: 25px 0;
+
+    @media (max-width: ${ theme.breakpoint.tablet }) {
+        display: flex;
+        justify-content: center;
+    }
 `
 export const OfertaBody = styled.div`
     background-color: lightblue;

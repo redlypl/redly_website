@@ -11,11 +11,17 @@ import {
 
 } from "../../styles/templates/index/about.style"
 
+import Header from "../../components/header/header"
+import { EmojiData } from "../../components/apple-emojis/emojiData"
+
 const About = () => {
   return (
     <AboutWrapper>
       <HeaderWrapper>
-        header
+        <Header
+          name="Kilka słów o nas"
+          emojiBase={EmojiData.pushpin}
+        />
       </HeaderWrapper>
       <AboutBody>
         <ContentSide>

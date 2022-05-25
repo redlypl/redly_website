@@ -8,11 +8,17 @@ import {
 
 } from "../../styles/templates/realizacje/realizacje.style"
 
+import Header from "../../components/header/header"
+import { EmojiData } from "../../components/apple-emojis/emojiData"
+
 const Realizacje = () => {
     return (
         <RealizacjeWrapper>
             <HeaderWrapper>
-                header
+                <Header
+                    name="Wszystkie realizacje"
+                    emojiBase={EmojiData.hammer}
+                />
             </HeaderWrapper>
             <RealizationsItemsWrapper>
                 <RealizationItem>first-item</RealizationItem>

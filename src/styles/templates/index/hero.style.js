@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components"
+import styled from "styled-components"
 import { theme } from "../../../styles/theme"
 
 import SculptureDecoBg from "../../../images/heroImg/sculptureDecoX.png"
@@ -66,16 +66,17 @@ export const Top = styled.div`
 export const Bottom = styled.div`
     margin-top: 25px;
     width: 100%;
-    height: 50px;
+    height: 100px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     overflow: hidden;
 
     @media (max-width: ${theme.breakpoint.tablet}) {
         flex-direction: column;
         text-align: center;
         height: 100px;
-        gap: 25px;
+        gap: 15px;
         margin-top: 0;
     }
 `
@@ -89,15 +90,11 @@ export const ContentSide = styled.div`
     gap: 10px;
     overflow: hidden;
     
-    @media (max-width: ${theme.breakpoint.desktop}) {
-
-    }
-    @media (max-width: ${theme.breakpoint.laptop}) {
-       
-    }
     @media (max-width: ${theme.breakpoint.tablet}) {
         width: 100%;
         height: calc( 50% - 5px );
+        align-items: center;
+        gap: 15px;
     }
 `
 export const SculptureSide = styled.div`
@@ -105,15 +102,6 @@ export const SculptureSide = styled.div`
     height: 600px;
     overflow: hidden;
 
-    @media (max-width: ${theme.breakpoint.largeDesktop}) {
-
-    }
-    @media (max-width: ${theme.breakpoint.desktop}) {
-    
-    }
-    @media (max-width: ${theme.breakpoint.laptop}) {
-
-    }
     @media (max-width: ${theme.breakpoint.tablet}) {
         width: 100%;
         height: calc( 50% - 5px );
@@ -135,13 +123,6 @@ export const Sculpture = styled.div`
     animation-name: slideSculpN;
     animation-duration: 2s;
 
-    @media (max-width: ${theme.breakpoint.desktop}) {
-
-    }
-    @media (max-width: ${theme.breakpoint.laptop}) {
-
-
-    }
     @media (max-width: ${theme.breakpoint.tablet}) {
         width: 160px;
         background-size: 100%;
@@ -172,12 +153,6 @@ export const DecoSculpture = styled.div`
     animation-name: bgSlideD;
     animation-duration: 2s;
 
-    @media (max-width: ${theme.breakpoint.desktop}) {
-
-    }
-    @media (max-width: ${theme.breakpoint.laptop}) {
-
-    }
     @media (max-width: ${theme.breakpoint.tablet}) {
         width: 280px;
         background-size: 100%;
@@ -237,13 +212,15 @@ export const WroconsultLogo = styled.a`
     background-position: center;
     filter: grayscale(1);
     width: 120px;
-    height: 100%;
+    height: 100px;
+    margin-right: 10px;
 
     :hover {
         transform: scale(1.1);
     }
     @media (max-width: ${theme.breakpoint.tablet}) {
         background-size: 80%;
+        height: 50px;
     }
 `
 export const SocialItem = styled.a`

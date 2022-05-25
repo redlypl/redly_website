@@ -5,7 +5,7 @@ export const ContactWrapper = styled.div`
     padding: 50px 200px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 5px;
 
     @media (max-width: ${theme.breakpoint.desktop}) {
         gap: 5px;
@@ -22,12 +22,15 @@ export const ContactWrapper = styled.div`
     }
 `
 export const HeaderWrapper = styled.div`
-    background-color: fuchsia;
     padding: 25px 0;
+
+    @media (max-width: ${ theme.breakpoint.tablet }) {
+        display: flex;
+        justify-content: center;
+    }
 `
 export const UnderHeaderWrapper = styled.div`
-    background-color: fuchsia;
-    padding: 25px 0;
+
 `
 export const ContactBody = styled.div`
     background-color: lightblue;
@@ -35,6 +38,7 @@ export const ContactBody = styled.div`
     height: 450px;
     display: flex;
     justify-content: space-around;
+    margin-top: 15px;
 
     @media (max-width: ${theme.breakpoint.largeDesktop}) {
         padding: 0 50px;

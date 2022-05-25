@@ -9,11 +9,17 @@ import {
 
 } from "../../styles/templates/index/articles.style"
 
+import Header from "../../components/header/header"
+import { EmojiData } from "../../components/apple-emojis/emojiData"
+
 const Articles = () => {
   return (
     <ArticlesWrapper>
       <HeaderWrapper>
-        header
+        <Header
+          name="Najnowsze artykuły"
+          emojiBase={EmojiData.books}
+        />
       </HeaderWrapper>
       <ArticlesItemsWrapper>
         <ArticleItem>first-item</ArticleItem>

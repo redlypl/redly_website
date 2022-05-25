@@ -22,8 +22,12 @@ export const ArticlesWrapper = styled.div`
     }
 `
 export const HeaderWrapper = styled.div`
-    background-color: antiquewhite;
     padding: 25px 0;
+
+    @media (max-width: ${ theme.breakpoint.tablet }) {
+        display: flex;
+        justify-content: center;
+    }
 `
 export const ArticlesItemsWrapper = styled.div`
     background-color: lightgreen;

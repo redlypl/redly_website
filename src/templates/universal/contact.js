@@ -10,20 +10,29 @@ import {
 
 } from "../../styles/templates/universal/contact.style"
 
+import Header from "../../components/header/header"
+import { EmojiData } from "../../components/apple-emojis/emojiData"
+
 const Contact = (props) => {
 
   let underHeader = '' 
 
   if ( props.isIndex === true ) {
-    underHeader = <HeaderWrapper> header </HeaderWrapper>
+    underHeader = (
+      <HeaderWrapper>
+        <Header
+          name="Skontaktuj się z nami"
+          emojiBase={EmojiData.envelope}
+        />
+      </HeaderWrapper>
+    )
   }
 
   return (
     <ContactWrapper>
       { underHeader }
       <UnderHeaderWrapper>
-        under header<br />
-        two lines
+        { props.content }
       </UnderHeaderWrapper>
       <ContactBody>
         <ImageDeco>

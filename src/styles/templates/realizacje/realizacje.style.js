@@ -22,7 +22,6 @@ export const RealizacjeWrapper = styled.div`
     }
 `
 export const HeaderWrapper = styled.div`
-    background-color: fuchsia;
     padding: 25px 0;
 `
 export const RealizationsItemsWrapper = styled.div`

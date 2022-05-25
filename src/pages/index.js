@@ -9,6 +9,8 @@ import Newsletter from "../templates/index/newsletter"
 import About from "../templates/index/about"
 import Contact from "../templates/universal/contact"
 
+import { ContactData } from "../templates/universal/contactData"
+
 const IndexPage = () => {
   return (
     <Layout>
@@ -17,7 +19,10 @@ const IndexPage = () => {
       <Realizations />
       <Newsletter />
       <About />
-      <Contact isIndex={ true } />
+      <Contact
+        isIndex={ true }
+        content={ ContactData.index }
+      />
     </Layout>
   )
 }

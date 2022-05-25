@@ -9,11 +9,17 @@ import {
 
 } from "../../styles/templates/index/newsletter.style"
 
+import Header from "../../components/header/header"
+import { EmojiData } from "../../components/apple-emojis/emojiData"
+
 const Newsletter = () => {
   return (
     <NewsletterWrapper>
       <HeaderWrapper>
-        header
+        <Header
+          name="Zapisz się na nasz newsletter"
+          emojiBase={EmojiData.openMailboxWithRaisedFlag}
+        />
       </HeaderWrapper>
       <NewsletterBody>
         <SignSide>
