@@ -23,6 +23,7 @@ export const ONasWrapper = styled.div`
 `
 export const HeaderWrapper = styled.div`
     padding: 25px 0;
+    margin-bottom: 40px;
 
     @media (max-width: ${ theme.breakpoint.tablet }) {
         display: flex;
