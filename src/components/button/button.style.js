@@ -56,10 +56,10 @@ export const ButtonLinkElement = styled(Link)`
     text-decoration: none;
     
     @media (max-width: ${theme.breakpoint.largeDesktop}) {
-        font: normal normal 600 18px/26px Poppins;
+        font: normal normal 600 22px/26px Poppins;
     }
     @media (max-width: ${theme.breakpoint.desktop}) {
-        font: normal normal 600 20px/28px Poppins;
+        font: normal normal 600 23px/28px Poppins;
     }  
 `
 export const ButtonHrefElement = styled.a`

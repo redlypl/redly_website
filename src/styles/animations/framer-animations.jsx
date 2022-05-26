@@ -50,3 +50,31 @@ export const SculptureAnimation = {
         },
     },
 };
+export const LeftSlideOneShowAnimation = {
+    hidden: {
+        x: -500,
+    },
+    visible: {
+        x: 0,
+        transition: {
+            duration: 0.5,
+            type: "tween",
+            ease: "easeInOut",
+        }
+    }
+}
+export const ScaleOneShowAnimation = {
+    hidden: {
+        scale: 0,
+        opacity: 0
+    },
+    visible: {
+        scale: 1,
+        opacity: 1,
+        transition: {
+            duration: 0.4,
+            type: "tween",
+            ease: "easeInOut",
+        }
+    }
+}
