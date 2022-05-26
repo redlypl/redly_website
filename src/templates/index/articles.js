@@ -50,10 +50,9 @@ const Articles = () => {
   }, [control, inView])
 
   return (
-    <ArticlesWrapper>
+    <ArticlesWrapper ref={ref}>
       <HeaderWrapper>
         <motion.div
-          ref={ref}
           variants={LeftSlideOneShowAnimation}
           initial="hidden"
           animate={control}

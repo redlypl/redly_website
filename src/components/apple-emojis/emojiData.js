@@ -6,4 +6,5 @@ export const EmojiData = {
     envelope: "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/285/envelope_2709-fe0f.png",
     hammerAndWrench: "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/285/hammer-and-wrench_1f6e0-fe0f.png",
     handshake: "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/285/handshake_1f91d.png",
+    pensiveFace: "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/285/pensive-face_1f614.png",
 }

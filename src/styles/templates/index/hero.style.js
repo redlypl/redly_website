@@ -108,10 +108,6 @@ export const SculptureSide = styled.div`
         display: flex;
         justify-content: center;
     }
-    @media (max-width: ${theme.breakpoint.mobile}) {
-
-    }
-
 `
 export const Sculpture = styled.div`
     height: 100%;

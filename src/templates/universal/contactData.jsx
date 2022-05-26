@@ -45,9 +45,9 @@ const B = styled.b`
 export const ContactData = {
     index: <Paragraph>Zainteresowany <B>współpracą</B>? Zapraszamy do <B>kontaktu</B> lub przejrzenia świadczonych przez nas <Link_ to="/oferta">usług</Link_>.</Paragraph>,
     oferta: <Paragraph><B>Nie znalazłeś</B> oczekiwanej oferty? Zapytaj o <Link_ to="/oferta">indywidualną usługę</Link_>. Jesteśmy otwarci na <B>nowe wyzwania</B>.</Paragraph>,
-    realizacje: <Paragraph>realizacje</Paragraph>,
+    realizacje: <Paragraph>Zainteresowany <B>współpracą</B>? Zapraszamy do <B>kontaktu</B> lub przejrzenia świadczonych przez nas <Link_ to="/oferta">usług</Link_>.</Paragraph>,
     blog: <Paragraph>Zainteresowany <B>współpracą</B>? Zapraszamy do <B>kontaktu</B> lub przejrzenia świadczonych przez nas <Link_ to="/oferta">usług</Link_>.</Paragraph>,
-    onas: <Paragraph>onas</Paragraph>,
-    kontakt: <Paragraph>kontakt</Paragraph>,
-    notfound: <Paragraph>nie znaleziono 404</Paragraph>
+    onas: <Paragraph>Zainteresowany <B>współpracą</B>? Zapraszamy do <B>kontaktu</B> lub przejrzenia świadczonych przez nas <Link_ to="/oferta">usług</Link_>.</Paragraph>,
+    kontakt: <Paragraph>Zainteresowany <B>współpracą</B>? Zapraszamy do <B>kontaktu</B> lub przejrzenia świadczonych przez nas <Link_ to="/oferta">usług</Link_>.</Paragraph>,
+    notfound: <Paragraph>Nie znalazłeś tego czego szukałeś? Nic straconego, <B>skontaktuj się</B> z nami lub przejrzyj <Link_ to="/oferta">nasze oferty</Link_>.</Paragraph>
 }

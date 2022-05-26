@@ -6,11 +6,12 @@ const Emoji = styled.div`
     background-image: ${props => `url(${props.urlProp})`};
     background-position: center;
     background-size: 100%;
-    height: 48px;
-    width: 48px;
+    height: 45px;
+    width: 45px;
     display: inline-block;
 
-    @media (max-width: ${theme.breakpoint.desktop}) {height: 45px;width: 45px;}
+    @media (max-width: ${theme.breakpoint.largeDesktop}) {height: 40px;width: 40px;}
+    @media (max-width: ${theme.breakpoint.desktop}) {height: 40px;width: 40px;}
     @media (max-width: ${theme.breakpoint.laptop}) {height: 42px;width: 42px;}
     @media (max-width: ${theme.breakpoint.tablet}) {height: 35px;width: 35px;}
 
@@ -18,15 +19,7 @@ const Emoji = styled.div`
 
 const AppleEmojis = (props) => {
     return (
-        <Emoji
-            urlProp={props.url}
-            sizeProp={props.size}
-            sizePropLargeDesktop={props.sizeLargeDesktop}
-            sizePropDesktop={props.sizeDesktop}
-            sizePropLaptop={props.sizeLaptop}
-            sizePropTablet={props.sizeTablet}
-            sizePropMobile={props.sizeMobile}
-        />
+        <Emoji urlProp={props.url} />
     )
 }
 

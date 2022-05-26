@@ -34,9 +34,6 @@ export const ArticlesWrapper = styled.div`
             display: none;
         }
     }
-    @media (max-width: ${theme.breakpoint.mobile}) {
-        padding: 25px 10px;
-    }
 `
 export const HeaderWrapper = styled.div`
     padding: 25px 0;

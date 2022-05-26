@@ -3,11 +3,11 @@ import { ButtonWrapper, ButtonLinkElement, ButtonHrefElement, ArrowElement } fro
 
 const Button = (props) => {
     let hrefElement = ""
-    let LinkElement = <ButtonLinkElement to={ props.to }>{props.name}</ButtonLinkElement>
+    let LinkElement = <ButtonLinkElement isBiggerFontProps={props.isBiggerFont} to={ props.to }>{props.name}</ButtonLinkElement>
     let Arrow = <ArrowElement className="btnHover" />
 
     if ( props.isHref === true ) {
-        hrefElement = <ButtonHrefElement href={props.href}>{props.name}</ButtonHrefElement>
+        hrefElement = <ButtonHrefElement isBiggerFontProps={props.isBiggerFont} href={props.href}>{props.name}</ButtonHrefElement>
         LinkElement = ""
     }
 

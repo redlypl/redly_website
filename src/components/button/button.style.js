@@ -50,7 +50,9 @@ export const ButtonWrapper = styled.div`
 `
 export const ButtonLinkElement = styled(Link)`
     text-align: left;
-    font: normal normal 600 20px/28px Poppins;
+    font-size: ${({isBiggerFontProps}) => isBiggerFontProps ? '30px' : '20px'};
+    font-weight: 600;
+    line-height: 28px;
     letter-spacing: 0px;
     color: ${theme.color.black};
     text-decoration: none;
@@ -64,7 +66,9 @@ export const ButtonLinkElement = styled(Link)`
 `
 export const ButtonHrefElement = styled.a`
     text-align: left;
-    font: normal normal 600 20px/28px Poppins;
+    font-size: ${({isBiggerFontProps}) => isBiggerFontProps ? '30px' : '20px'};
+    font-weight: 600;
+    line-height: 28px;
     letter-spacing: 0px;
     color: ${theme.color.black};
     text-decoration: none;

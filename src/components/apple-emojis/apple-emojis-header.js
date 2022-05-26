@@ -18,15 +18,7 @@ const Emoji = styled.div`
 
 const AppleEmojis = (props) => {
     return (
-        <Emoji
-            urlProp={props.url}
-            sizeProp={props.size}
-            sizePropLargeDesktop={props.sizeLargeDesktop}
-            sizePropDesktop={props.sizeDesktop}
-            sizePropLaptop={props.sizeLaptop}
-            sizePropTablet={props.sizeTablet}
-            sizePropMobile={props.sizeMobile}
-        />
+        <Emoji urlProp={props.url} />
     )
 }
 
