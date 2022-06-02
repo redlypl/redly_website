@@ -1,6 +1,8 @@
 import styled from "styled-components"
 import { theme } from "../../theme"
 
+import cursorPointer from "../../../images/cursor-pointer-finger-emoji.png"
+
 export const ArticlesWrapper = styled.div`
     padding: 50px 200px;
     display: flex;
@@ -73,6 +75,7 @@ export const ArticleItem = styled.div`
     border-radius: 17px;
     height: 22rem;
     width: 30rem;
+    cursor: url(${cursorPointer}), auto;
 
     :hover {
         transform: scale(1.03);

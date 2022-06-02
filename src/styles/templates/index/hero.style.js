@@ -6,6 +6,8 @@ import SculptureBg from "../../../images/heroImg/sculpture.png"
 import WroconsultLogoBg from "../../../images/wroconsult.png"
 import gradientCircle from "../../../images/gradientCircle.png"
 
+import cursorPointer from "../../../images/cursor-pointer-finger-emoji.png"
+
 export const HeroWrapper = styled.div`
     height: 800px;
     width: 100%;
@@ -225,26 +227,10 @@ export const SocialItem = styled.a`
     color: ${theme.color.black};
     font-weight: 500;
     position: relative;
+    cursor: url(${cursorPointer}), auto;
 
     :hover {
         margin-left: 6px;
-    }
-    ::before {
-        content: '';
-        background-image: url('https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/285/backhand-index-pointing-right_1f449.png');
-        background-size: 100%;
-        height: 30px;
-        width: 30px;
-        position: absolute;
-        right: -25px;
-        top: -55px;
-        transform: rotate(120deg);
-        opacity: 0;
-    }
-    :hover::before{
-        right: -5px;
-        top: -32px;
-        opacity: 1;
     }
 `
 export const Header = styled.div`

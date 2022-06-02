@@ -4,11 +4,14 @@ import styled from "styled-components"
 import rightArrow from "../../images/rightArrow.png"
 import { theme } from "../../styles/theme"
 
+import cursorPointer from "../../images/cursor-pointer-finger-emoji.png"
+
 export const ButtonWrapper = styled.div`
     background: #F0F0F0 0% 0% no-repeat padding-box;
     display: inline-flex;
     padding: 5px 10px;
     margin: 5px 0;
+    cursor: url(${cursorPointer}), auto;
 
     :hover {
         animation-name: Shake;
@@ -56,6 +59,7 @@ export const ButtonLinkElement = styled(Link)`
     letter-spacing: 0px;
     color: ${theme.color.black};
     text-decoration: none;
+    cursor: url(${cursorPointer}), auto;
     
     @media (max-width: ${theme.breakpoint.largeDesktop}) {
         font: normal normal 600 22px/26px Poppins;
@@ -72,6 +76,7 @@ export const ButtonHrefElement = styled.a`
     letter-spacing: 0px;
     color: ${theme.color.black};
     text-decoration: none;
+    cursor: url(${cursorPointer}), auto;
     
     @media (max-width: ${theme.breakpoint.largeDesktop}) {
         font: normal normal 600 18px/26px Poppins;
