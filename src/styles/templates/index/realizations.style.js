@@ -62,7 +62,7 @@ export const RealizationItem = styled.div`
     height: 300px;
     width: 100%;
     box-shadow: 0px 3px 17px #00000019;
-    background-color: white;
+    background-color: #F5F5F5;
     border-radius: 17px;
     display: flex;
     cursor: url(${cursorPointer}), auto;

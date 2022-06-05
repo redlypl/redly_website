@@ -73,7 +73,7 @@ export const ArticleItem = styled.div`
     background-color: #F5F5F5;
     box-shadow: 0px 3px 17px #00000015;
     border-radius: 17px;
-    height: 22rem;
+    height: 390px;
     width: 30rem;
     cursor: url(${cursorPointer}), auto;
 
@@ -145,6 +145,7 @@ export const Title = styled.div`
     font-size: 22px;
     line-height: 32px;
     font-weight: 600;
+    margin-top: -5px;
 `
 export const Description = styled.div`
     font-size: 13px;
