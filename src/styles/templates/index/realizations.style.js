@@ -87,6 +87,11 @@ export const RealizationItem = styled.div`
 `
 export const BtnWrapper = styled.div`
     padding: 20px 0;
+    display: flex;
+
+    @media (max-width: ${theme.breakpoint.tablet}) {
+        justify-content: center;
+    }
 `
 export const ContentItemWrapper = styled.div`
     display: flex;
