@@ -66,6 +66,5 @@ export const ImagePlace = styled.div`
     height: 100%;
 `
 export const BtnWrapper = styled.div`
-    background-color: pink;
     padding: 20px 0;
 `
