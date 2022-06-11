@@ -79,7 +79,7 @@ const Articles = () => {
                     <TagPlaceholder>Poradniki</TagPlaceholder>
                     <PublishedDate>26.02.2022</PublishedDate>
                   </Bar>
-                  <Title>Najważniejsze narzędzia dla projektanta</Title>
+                  <Title>Najważniejsze narzędzia dla projektanta narzędzia</Title>
                   <Description>Z tego artykułu dowiesz się jakie niezbędne narzędzi sdlfjhsodfdo hsfhsfioushdfiuhsdf uishdf sdbfsdh fsdh fhs fhsd fs df sdfh sdhf hsdfha posiada każdy projektant oraz jak z nich profesjonalnie korzystać.</Description>
                 </PostContentWrapper>
               </ArticleItem>

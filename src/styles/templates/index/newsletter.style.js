@@ -38,6 +38,7 @@ export const HeaderWrapper = styled.div`
     @media (max-width: ${ theme.breakpoint.tablet }) {
         display: flex;
         justify-content: center;
+        padding: 0 10px;
     }
 `
 export const NewsletterBody = styled.div`
@@ -161,8 +162,11 @@ export const FormWrapper = styled.div`
     justify-content: space-between;
 
     @media (max-width: ${theme.breakpoint.laptop}) {
-        height: 165px;
-        width: 300px;
+        height: 185px;
+        width: 400px;
+    }
+    @media (max-width: ${theme.breakpoint.mobile}) {
+        align-items: center;
     }
 `
 export const SignHeader = styled.div`
@@ -174,6 +178,7 @@ export const SignHeader = styled.div`
     @media (max-width: ${theme.breakpoint.tablet}) {
         font-size: 20px;
         line-height: 25px;
+        width: 300px;
     }
 `
 export const InputSign = styled.input`

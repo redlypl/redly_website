@@ -29,7 +29,7 @@ import {
 
 import Header from "../../components/header/header"
 import { EmojiData } from "../../components/apple-emojis/emojiData"
-import AppleEmojis from "../../components/apple-emojis/apple-emojis-normal"
+import AppleEmojis from "../../components/apple-emojis/apple-emojis-custom1"
 
 const Newsletter = () => {
   const [isSent, setIsSent] = useState(false)
@@ -81,7 +81,7 @@ const Newsletter = () => {
           <SuccessMessageWrapper>
             <ContentParagraph>
               <SuccessHeader>Zostałeś pomyślnie zapisany na newsletter <AppleEmojis url={EmojiData.faceWithOpenMouth} /><AppleEmojis url={EmojiData.partyPopper} /></SuccessHeader>
-              <ContentSuccessParagaph>Wszystko co musisz teraz zrobić to otworzyć wiadomość i kliknąć w wysłany link aby potwierdzić udział w newsletterze.</ContentSuccessParagaph>
+              <ContentSuccessParagaph>Wszystko co musisz teraz zrobić to otworzyć wiadomość email i kliknąć w wysłany link aby potwierdzić udział w newsletterze.</ContentSuccessParagaph>
             </ContentParagraph>
             <IconSuccessWrapper>
               <SuccessIcon />
