@@ -18,6 +18,7 @@ import {
 
 import Header from "../../components/header/header"
 import { EmojiData } from "../../components/apple-emojis/emojiData"
+import SocialMediaInset from "../../components/socialMediaInset/socialMediaInset"
 
 const test_data = [
     {
@@ -88,7 +89,7 @@ const Articles = () => {
                 })}
             </ArticlesItemsWrapper>
             <SocialMediaWrapper>
-                =ig_icon= =behance_icon= =github_icon=
+                <SocialMediaInset />
             </SocialMediaWrapper>
         </ArticlesWrapper>
     )

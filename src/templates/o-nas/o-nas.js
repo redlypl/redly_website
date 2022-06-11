@@ -9,6 +9,7 @@ import {
 
 import Header from "../../components/header/header"
 import { EmojiData } from "../../components/apple-emojis/emojiData"
+import SocialMediaInset from "../../components/socialMediaInset/socialMediaInset"
 
 const ONas = () => {
     return (
@@ -22,6 +23,7 @@ const ONas = () => {
             <RealizationsItemsWrapper>
                 about us  - content body
             </RealizationsItemsWrapper>
+            <SocialMediaInset />
         </ONasWrapper>
     )
 }

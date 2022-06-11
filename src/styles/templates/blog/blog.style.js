@@ -125,9 +125,8 @@ export const Description = styled.div`
     width: 100%;
 `
 export const SocialMediaWrapper = styled.div`
-    background-color: burlywood;
     margin-top: 20px;
-    padding: 20px 0;
+    padding: 0;
     display: flex;
     justify-content: center;
 `

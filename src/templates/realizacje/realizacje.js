@@ -16,6 +16,7 @@ import {
 
 } from "../../styles/templates/realizacje/realizacje.style"
 
+import SocialMediaInset from "../../components/socialMediaInset/socialMediaInset"
 import Header from "../../components/header/header"
 import { EmojiData } from "../../components/apple-emojis/emojiData"
 
@@ -98,6 +99,7 @@ const Realizacje = () => {
                     )
                 })}
             </RealizationsItemsWrapper>
+            <SocialMediaInset />
         </RealizacjeWrapper>
     )
 }
