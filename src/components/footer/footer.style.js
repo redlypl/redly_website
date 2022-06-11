@@ -15,8 +15,7 @@ export const FooterContent = styled.div`
     justify-content: space-between;
     align-items: center;
     color: white;
-    font-style: italic;
-    font-size: 15px;
+    font-size: 14.5px;
     font-weight: 400;
 `
 export const BreakVerticalLine = styled.div`

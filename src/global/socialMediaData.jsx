@@ -7,7 +7,7 @@ import behance from "../images/socialMediaIcons/behance.png"
 export const SocialMediaLink = {
     facebook: 'https://www.facebook.com/redlypl',
     instagram: 'https://www.instagram.com/redly.pl/',
-    github: 'https://github.com/redlyagency',
+    github: 'https://github.com/redlypl',
     linkedin: 'https://www.linkedin.com/company/redlypl',
     behance: 'https://www.behance.net/redlyagency'
 }

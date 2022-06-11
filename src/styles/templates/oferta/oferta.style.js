@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { theme } from "../../theme"
 
 export const OfertaWrapper = styled.div`
-    padding: 50px 200px;
+    padding: 50px 200px 10px 200px;
     display: flex;
     flex-direction: column;
     gap: 25px;

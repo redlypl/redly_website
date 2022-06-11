@@ -15,8 +15,12 @@ export const Header = styled.h5`
     font-style: italic;
     word-spacing: 20px;
 
+    @media (max-width: ${theme.breakpoint.tablet}) {
+        font-size: 14.5px;
+        word-spacing: 5px;
+    }
     @media (max-width: ${theme.breakpoint.mobile}) {
-        font-size: 12.5px;
+        font-size: 11.5px;
         word-spacing: 5px;
     }
 `
