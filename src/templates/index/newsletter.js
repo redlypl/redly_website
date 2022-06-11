@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { useFormik } from "formik"
 import * as Yup from "yup"
-import axios from "axios"
+//import axios from "axios"
 
 import {
   NewsletterWrapper,

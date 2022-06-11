@@ -237,10 +237,21 @@ export const SubmitButton = styled.button`
         top: 0;
     }
     :hover::before {
-        transform: scale(1.1);  
+        background-image: url('https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/285/backhand-index-pointing-right_1f449.png');
+        background-size: 42%;
+        animation-name: show;
+        animation-duration: 0.2s;
     }
-    :hover {
-        background-color: #383834;
+
+    @keyframes show {
+        from {
+            background-position: -70px 53%;
+            background-image: none;
+        }
+        to {
+            background-position: 50% 53%;
+            background-image: url('https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/285/backhand-index-pointing-right_1f449.png');
+        }
     }
 `
 export const InputSubmitWrapper = styled.form`

@@ -20,12 +20,12 @@ const SocialMediaData = [
   {
     icon: SocialMediaIcon.instagram,
     url: SocialMediaLink.instagram,
-    size: '45%'
+    size: '48%'
   },
   {
     icon: SocialMediaIcon.github,
     url: SocialMediaLink.github,
-    size: '50%'
+    size: '52%'
   },
   {
     icon: SocialMediaIcon.linkedin,
@@ -35,7 +35,7 @@ const SocialMediaData = [
   {
     icon: SocialMediaIcon.behance,
     url: SocialMediaLink.behance,
-    size: '60%'
+    size: '63%'
   },
 ]
 

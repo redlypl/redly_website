@@ -7,11 +7,15 @@ import {
   ContactBody,
   ImageDeco,
   ContactFormWrapper,
+  ImageDecorationContact,
 
 } from "../../styles/templates/universal/contact.style"
 
 import Header from "../../components/header/header"
 import { EmojiData } from "../../components/apple-emojis/emojiData"
+import ContactForm from "../../components/contactForm/contactForm"
+
+
 
 const Contact = (props) => {
 
@@ -36,10 +40,10 @@ const Contact = (props) => {
       </UnderHeaderWrapper>
       <ContactBody>
         <ImageDeco>
-          deco image place
+          <ImageDecorationContact />
         </ImageDeco>
         <ContactFormWrapper>
-          contact form
+          <ContactForm />
         </ContactFormWrapper>
       </ContactBody>
     </ContactWrapper>

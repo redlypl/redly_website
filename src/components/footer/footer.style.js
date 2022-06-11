@@ -6,6 +6,7 @@ export const FooterWrapper = styled.div`
     height: 65px;
     display: flex;
     justify-content: center;
+    margin-top: 25px;
 `
 export const FooterContent = styled.div`
     height: 100%;
