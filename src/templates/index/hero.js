@@ -2,6 +2,8 @@ import React from "react"
 import Button from "../../components/button/button"
 import { motion } from "framer-motion";
 
+import { SocialMediaLink } from "../../global/socialMediaData";
+
 import {
   HeroWrapper,
   Top,
@@ -32,15 +34,15 @@ const HeroData = {
 const socialMediaData = [
   {
     title: 'Instagram / ',
-    url: 'https://www.instagram.com/redly.pl/'
+    url: SocialMediaLink.instagram
   },
   {
     title: 'Behance / ',
-    url: 'https://www.behance.net/redlyagency'
+    url: SocialMediaLink.behance
   },
   {
     title: 'Github',
-    url: 'https://github.com/redlyagency'
+    url: SocialMediaLink.github
   },
 ]
 
