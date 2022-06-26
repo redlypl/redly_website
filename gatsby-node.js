@@ -1,6 +1,6 @@
 exports.createPages = async function({actions, graphql}) {
     const { data } = await graphql(`
-        { allContentfulArtykul {
+         { allContentfulRealizations {
                 edges {
                     node {
                         slug
@@ -13,11 +13,11 @@ exports.createPages = async function({actions, graphql}) {
 
 // Create single blog posts
 
-data.allContentfulArtykul.edges.forEach(edge => {
+data.allContentfulRealizations.edges.forEach(edge => {
     const slug = edge.node.slug
     actions.createPage({
         path: "/realizacje/" + slug,
-        component: require.resolve(`./src/templates/article/article.js`),
+        component: require.resolve(`./src/templates/realizacjeArticle/realizacjeArticle.js`),
         context: { slug }
     })
 })

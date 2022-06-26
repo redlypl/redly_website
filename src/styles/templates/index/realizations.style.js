@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { Link } from "gatsby"
 import { theme } from "../../theme"
 
 import clipPathPng from "../../../images/realizations-clip-path.png"
@@ -58,7 +59,7 @@ export const RealizationsItemsWrapper = styled.div`
         padding: 0;
     }
 `
-export const RealizationItem = styled.div`
+export const RealizationItem = styled(Link)`
     height: 300px;
     width: 100%;
     box-shadow: 0px 3px 17px #00000019;
@@ -66,6 +67,8 @@ export const RealizationItem = styled.div`
     border-radius: 17px;
     display: flex;
     cursor: url(${cursorPointer}), auto;
+    text-decoration: none;
+    color: black;
 
     :hover > .hoverBg {
         opacity: 1;

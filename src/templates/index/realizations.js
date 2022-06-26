@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql, useStaticQuery } from "gatsby"
 
 import {
   RealizationsWrapper,
@@ -21,35 +22,27 @@ import Header from "../../components/header/header"
 import { EmojiData } from "../../components/apple-emojis/emojiData"
 import Button from "../../components/button/button"
 
-import wroconsult from "../../images/portfolio/wroconsult.jpg"
-import redly from "../../images/portfolio/redly.jpg"
-import unknown from "../../images/portfolio/unknown.jpg"
-
-const RealizationData = [
-  {
-    id: '03',
-    name: 'Wroconsult',
-    category: 'Strona internetowa',
-    date: '23 sierpień 2022',
-    thumbnail: wroconsult
-  },
-  {
-    id: '02',
-    name: 'Redly',
-    category: 'Kampania reklamowa',
-    date: '23 sierpień 2022',
-    thumbnail: redly
-  },
-  {
-    id: '01',
-    name: 'Unknow art',
-    category: 'Branding',
-    date: '23 sierpień 2022',
-    thumbnail: unknown
-  },
-]
-
 const Realizations = () => {
+  const data = useStaticQuery(graphql`
+    query RealizationsQuery {
+        allContentfulRealizations {
+            edges {
+                node {
+                    id
+                    number
+                    title
+                    slug
+                    category
+                    createdAt(formatString: "DD-MM-YYYY")
+                    thumbnail {
+                    url
+                    }
+                }
+            }
+        }
+    }
+  `)
+
   return (
     <RealizationsWrapper>
       <HeaderWrapper>
@@ -59,21 +52,21 @@ const Realizations = () => {
         />
       </HeaderWrapper>
       <RealizationsItemsWrapper>
-        {RealizationData.map((item) => {
+        {data.allContentfulRealizations.edges.slice(0, 3).map(({node}) => {
           return (
-            <RealizationItem key={item.id}>
+            <RealizationItem key={node.id} to={node.slug}>
               <ContentItemWrapper>
                 <DecoLine />
-                <Number>{item.id}</Number>
+                <Number>{node.number}</Number>
                 <HeaderWrapperItemItem>
-                  <TitleParagraph>{item.name}</TitleParagraph>
-                  <CategoryParagraph>{item.category}</CategoryParagraph>
-                  <DateParagraph>{item.date}</DateParagraph>
+                  <TitleParagraph>{node.title}</TitleParagraph>
+                  <CategoryParagraph>{node.category}</CategoryParagraph>
+                  <DateParagraph>{node.createdAt}</DateParagraph>
                 </HeaderWrapperItemItem>
               </ContentItemWrapper>
               <ThumbnailItemWrapper
                 className="hoverBg"
-                background={item.thumbnail}
+                background={node.thumbnail.url}
               />
             </RealizationItem>
           )

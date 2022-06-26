@@ -1,8 +1,11 @@
 import React from "react"
+import { graphql, useStaticQuery } from "gatsby"
 
 import {
     RealizacjeWrapper,
     HeaderWrapper,
+    CategoryFilterBar,
+    Label,
     RealizationsItemsWrapper,
     RealizationItem,
     ContentItemWrapper,
@@ -20,56 +23,42 @@ import SocialMediaInset from "../../components/socialMediaInset/socialMediaInset
 import Header from "../../components/header/header"
 import { EmojiData } from "../../components/apple-emojis/emojiData"
 
-import wroconsult from "../../images/portfolio/wroconsult.jpg"
-import redly from "../../images/portfolio/redly.jpg"
-import unknown from "../../images/portfolio/unknown.jpg"
-
-const RealizationData = [
+const CategoryList = [
     {
-        id: '06',
-        name: 'Wroconsult',
-        category: 'Strona internetowa',
-        date: '23 sierpień 2022',
-        thumbnail: wroconsult
+        id: 'branding',
+        category: 'Branding'
     },
     {
-        id: '05',
-        name: 'Redly',
-        category: 'Kampania reklamowa',
-        date: '23 sierpień 2022',
-        thumbnail: redly
+        id: 'strona_internetowa',
+        category: 'Strona internetowa'
     },
     {
-        id: '04',
-        name: 'Unknow art',
-        category: 'Branding',
-        date: '23 sierpień 2022',
-        thumbnail: unknown
-    },
-    {
-        id: '03',
-        name: 'Redly',
-        category: 'Kampania reklamowa',
-        date: '23 sierpień 2022',
-        thumbnail: redly
-    },
-    {
-        id: '02',
-        name: 'Wroconsult',
-        category: 'Strona internetowa',
-        date: '23 sierpień 2022',
-        thumbnail: wroconsult
-    },
-    {
-        id: '01',
-        name: 'Unknow art',
-        category: 'Branding',
-        date: '23 sierpień 2022',
-        thumbnail: unknown
+        id: 'kampania_reklamowa',
+        category: 'Kampania reklamowa'
     }
 ]
 
 const Realizacje = () => {
+    const dataAll = useStaticQuery(graphql`
+        query RealizationsQueryAll {
+            allContentfulRealizations {
+                edges {
+                    node {
+                        id
+                        number
+                        title
+                        slug
+                        category
+                        createdAt(formatString: "DD-MM-YYYY")
+                        thumbnail {
+                            url
+                        }
+                    }
+                }
+            }
+        }
+    `)
+
     return (
         <RealizacjeWrapper>
             <HeaderWrapper>
@@ -78,22 +67,63 @@ const Realizacje = () => {
                     emojiBase={EmojiData.hammer}
                 />
             </HeaderWrapper>
-            <RealizationsItemsWrapper>
-                {RealizationData.map((item) => {
+            <CategoryFilterBar>
+                <p>Kategoria: </p>
+                {CategoryList.map((item) => {
+
+                    // if (document.getElementById('branding').clicked == true) {
+                    //     alert('branding was checked')
+                    // } else if (document.getElementById('strona_internetowa').clicked == true) {
+                    //     alert('strona internetowa was checked')
+                    // } else {
+                    //     alert('nothing was checked')
+                    // }
+                    // if(element) {
+                    //     element.addEventListener("click", () => {
+                    //         return (
+                    //             <p>branding was checked</p>
+                    //         )
+                    //     })
+                    // }
+
+                    // let element = document.getElementById('branding').clicked
+
+                    // function returnConst() {
+                    
+                    //     if (element == true) {
+                    //         alert('branding was checked')
+                    
+                    //         return (
+                    //             <p>test</p>
+                    //         )
+                    //     }
+                    // }
+
                     return (
-                        <RealizationItem key={item.id}>
+                        <>
+                        <Label id={item.id}>{item.category}</Label>
+                
+        
+                        </>
+                    )
+                })}
+            </CategoryFilterBar>
+            <RealizationsItemsWrapper>
+                {dataAll.allContentfulRealizations.edges.map(( {node} ) => {
+                    return (
+                        <RealizationItem key={node.id} to={node.slug}>
                             <ContentItemWrapper>
                                 <DecoLine />
-                                <Number>{item.id}</Number>
+                                <Number>{node.number}</Number>
                                 <HeaderWrapperItemItem>
-                                <TitleParagraph>{item.name}</TitleParagraph>
-                                <CategoryParagraph>{item.category}</CategoryParagraph>
-                                <DateParagraph>{item.date}</DateParagraph>
+                                <TitleParagraph>{node.title}</TitleParagraph>
+                                <CategoryParagraph>{node.category}</CategoryParagraph>
+                                <DateParagraph>{node.createdAt}</DateParagraph>
                                 </HeaderWrapperItemItem>
                             </ContentItemWrapper>
                             <ThumbnailItemWrapper
                                 className="hoverBg"
-                                background={item.thumbnail}
+                                background={node.thumbnail.url}
                             />
                         </RealizationItem>
                     )

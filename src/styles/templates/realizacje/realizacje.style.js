@@ -5,6 +5,7 @@ import clipPathPng from "../../../images/realizations-clip-path.png"
 import clipPathPngMobile from "../../../images/realizations-clip-path-mobile.png"
 
 import cursorPointer from "../../../images/cursor-pointer-finger-emoji.png"
+import { Link } from "gatsby"
 
 export const RealizacjeWrapper = styled.div`
     padding: 50px 200px;
@@ -27,12 +28,47 @@ export const RealizacjeWrapper = styled.div`
     }
 `
 export const HeaderWrapper = styled.div`
-    padding: 25px 0;
-    margin-bottom: 40px;
+    padding: 25px 0 0 0;
 
     @media (max-width: ${ theme.breakpoint.tablet }) {
         display: flex;
         justify-content: center;
+    }
+`
+export const CategoryFilterBar = styled.div`
+    padding: 30px 0;
+    display: flex;
+    gap: 20px;
+    font-weight: 500;
+    align-items: center;
+    margin-left: 80px;
+
+    @media (max-width: ${theme.breakpoint.desktop}) {
+        margin-left: 0;
+    }
+    @media (max-width: ${theme.breakpoint.laptop}) {
+        flex-wrap: wrap;
+    }
+    @media (max-width: ${theme.breakpoint.tablet}) {
+        width: 100%;
+        justify-content: center;
+        padding: 30px 15px;
+    }
+`
+export const Label = styled.p`
+    background-color: ${theme.color.silver};
+    padding: 5px 10px;
+    border-radius: 99px;
+    font-weight: 500;
+    box-shadow: 0px 3px 12px #00000011;
+    cursor: pointer;
+
+    :hover {
+        transform: scale(1.05);
+    }
+
+    @media (max-width: ${theme.breakpoint.laptop}) {
+        margin: 0;
     }
 `
 export const RealizationsItemsWrapper = styled.div`
@@ -49,7 +85,7 @@ export const RealizationsItemsWrapper = styled.div`
         padding: 0;
     }
 `
-export const RealizationItem = styled.div`
+export const RealizationItem = styled(Link)`
     height: 300px;
     width: 100%;
     box-shadow: 0px 3px 17px #00000019;
@@ -57,6 +93,8 @@ export const RealizationItem = styled.div`
     border-radius: 17px;
     display: flex;
     cursor: url(${cursorPointer}), auto;
+    color: black;
+    text-decoration: none;
 
     :hover > .hoverBg {
         opacity: 1;
@@ -119,7 +157,7 @@ export const Number = styled.p`
     }
 `
 export const HeaderWrapperItemItem = styled.div`
-
+    
 `
 export const TitleParagraph = styled.h6`
     font-size: 53px;

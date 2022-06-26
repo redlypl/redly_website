@@ -15,9 +15,9 @@ const IndexPage = () => {
   return (
     <Layout>
       <Hero />
-      <Articles />
+      {/* <Articles /> enable when articles be avaible and ready to launch */}
       <Realizations />
-      <Newsletter />
+      {/* <Newsletter /> enable when newsletter be avaible and ready to launch */}
       <About />
       <Contact
         isIndex={ true }
