@@ -55,7 +55,7 @@ export const CategoryFilterBar = styled.div`
         padding: 30px 15px;
     }
 `
-export const Label = styled.p`
+export const Label = styled(Link)`
     background-color: ${theme.color.silver};
     padding: 5px 10px;
     border-radius: 99px;

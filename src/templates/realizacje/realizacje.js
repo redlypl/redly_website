@@ -23,21 +23,6 @@ import SocialMediaInset from "../../components/socialMediaInset/socialMediaInset
 import Header from "../../components/header/header"
 import { EmojiData } from "../../components/apple-emojis/emojiData"
 
-const CategoryList = [
-    {
-        id: 'branding',
-        category: 'Branding'
-    },
-    {
-        id: 'strona_internetowa',
-        category: 'Strona internetowa'
-    },
-    {
-        id: 'kampania_reklamowa',
-        category: 'Kampania reklamowa'
-    }
-]
-
 const Realizacje = () => {
     const dataAll = useStaticQuery(graphql`
         query RealizationsQueryAll {
@@ -69,42 +54,25 @@ const Realizacje = () => {
             </HeaderWrapper>
             <CategoryFilterBar>
                 <p>Kategoria: </p>
-                {CategoryList.map((item) => {
+                {dataAll.allContentfulRealizations.edges.map(({node}) => {
 
-                    // if (document.getElementById('branding').clicked == true) {
-                    //     alert('branding was checked')
-                    // } else if (document.getElementById('strona_internetowa').clicked == true) {
-                    //     alert('strona internetowa was checked')
-                    // } else {
-                    //     alert('nothing was checked')
-                    // }
-                    // if(element) {
-                    //     element.addEventListener("click", () => {
-                    //         return (
-                    //             <p>branding was checked</p>
-                    //         )
-                    //     })
-                    // }
-
-                    // let element = document.getElementById('branding').clicked
-
-                    // function returnConst() {
+                    function camelToUnderscore(key) {
+                        var result = key.replace( /([A-Z])/g, "$1" );
+                        return result.split(' ').join('_').toLowerCase();
+                    }
                     
-                    //     if (element == true) {
-                    //         alert('branding was checked')
-                    
-                    //         return (
-                    //             <p>test</p>
-                    //         )
-                    //     }
+                    // function NonDuplicates() {
+                    //     const Rdata = new Set 
+                    //     const filter = Rda
                     // }
 
+
+                    
                     return (
-                        <>
-                        <Label id={item.id}>{item.category}</Label>
-                
-        
-                        </>
+                        <Label key={node.id} to={'/realizacje/kategoria/' + `${camelToUnderscore(node.category)}`}>
+                            {/* {NonDuplicates()} */}
+                            sdfsdf
+                        </Label>
                     )
                 })}
             </CategoryFilterBar>

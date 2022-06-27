@@ -1,8 +1,11 @@
 import React from "react"
+import Layout from "../../components/layout/layout"
 
 const RealizacjeArticle = () => {
     return (
-        <h1>works!</h1>
+        <Layout>
+            fsdf
+        </Layout>
     )
 }
 

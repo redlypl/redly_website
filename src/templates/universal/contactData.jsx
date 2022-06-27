@@ -27,7 +27,7 @@ const Paragraph = styled.p`
         line-height: 30px;
     }
 `
-const Link_ = styled(Link)`
+const LinkB = styled(Link)`
     text-decoration: underline;
     color: ${ theme.color.black };
     font-weight: 700;
@@ -43,11 +43,11 @@ const B = styled.b`
 `
 
 export const ContactData = {
-    index: <Paragraph>Zainteresowany <B>współpracą</B>? Zapraszamy do <B>kontaktu</B> lub przejrzenia świadczonych przez nas <Link_ to="/oferta">usług</Link_>.</Paragraph>,
-    oferta: <Paragraph><B>Nie znalazłeś</B> oczekiwanej oferty? Zapytaj o <Link_ to="/oferta">indywidualną usługę</Link_>. Jesteśmy otwarci na <B>nowe wyzwania</B>.</Paragraph>,
-    realizacje: <Paragraph>Zainteresowany <B>współpracą</B>? Zapraszamy do <B>kontaktu</B> lub przejrzenia świadczonych przez nas <Link_ to="/oferta">usług</Link_>.</Paragraph>,
-    blog: <Paragraph>Zainteresowany <B>współpracą</B>? Zapraszamy do <B>kontaktu</B> lub przejrzenia świadczonych przez nas <Link_ to="/oferta">usług</Link_>.</Paragraph>,
-    onas: <Paragraph>Zainteresowany <B>współpracą</B>? Zapraszamy do <B>kontaktu</B> lub przejrzenia świadczonych przez nas <Link_ to="/oferta">usług</Link_>.</Paragraph>,
-    kontakt: <Paragraph>Zainteresowany <B>współpracą</B>? Zapraszamy do <B>kontaktu</B> lub przejrzenia świadczonych przez nas <Link_ to="/oferta">usług</Link_>.</Paragraph>,
-    notfound: <Paragraph>Nie znalazłeś tego czego szukałeś? Nic straconego, <B>skontaktuj się</B> z nami lub przejrzyj <Link_ to="/oferta">nasze oferty</Link_>.</Paragraph>
+    index: <Paragraph>Zainteresowany <B>współpracą</B>? Zapraszamy do <B>kontaktu</B> lub przejrzenia świadczonych przez nas <LinkB to="/oferta">usług</LinkB>.</Paragraph>,
+    oferta: <Paragraph><B>Nie znalazłeś</B> oczekiwanej oferty? Zapytaj o <LinkB to="/oferta">indywidualną usługę</LinkB>. Jesteśmy otwarci na <B>nowe wyzwania</B>.</Paragraph>,
+    realizacje: <Paragraph>Zainteresowany <B>współpracą</B>? Zapraszamy do <B>kontaktu</B> lub przejrzenia świadczonych przez nas <LinkB to="/oferta">usług</LinkB>.</Paragraph>,
+    blog: <Paragraph>Zainteresowany <B>współpracą</B>? Zapraszamy do <B>kontaktu</B> lub przejrzenia świadczonych przez nas <LinkB to="/oferta">usług</LinkB>.</Paragraph>,
+    onas: <Paragraph>Zainteresowany <B>współpracą</B>? Zapraszamy do <B>kontaktu</B> lub przejrzenia świadczonych przez nas <LinkB to="/oferta">usług</LinkB>.</Paragraph>,
+    kontakt: <Paragraph>Zainteresowany <B>współpracą</B>? Zapraszamy do <B>kontaktu</B> lub przejrzenia świadczonych przez nas <LinkB to="/oferta">usług</LinkB>.</Paragraph>,
+    notfound: <Paragraph>Nie znalazłeś tego czego szukałeś? Nic straconego, <B>skontaktuj się</B> z nami lub przejrzyj <LinkB to="/oferta">nasze oferty</LinkB>.</Paragraph>
 }
