@@ -25,7 +25,7 @@ import Button from "../../components/button/button"
 const Realizations = () => {
   const data = useStaticQuery(graphql`
     query RealizationsQuery {
-        allContentfulRealizations {
+        allContentfulRealizations(sort: {order: DESC, fields: number}) {
             edges {
                 node {
                     id

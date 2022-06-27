@@ -4,7 +4,7 @@
 exports.createPages = async function({actions, graphql}) {
 
     //==============
-    //import all slugs
+    //import all slugs and categories
     //==============
     const { data } = await graphql(`
         { allContentfulRealizations {
@@ -19,21 +19,6 @@ exports.createPages = async function({actions, graphql}) {
     `
     )
 
-    // //==============
-    // //import all categories
-    // //==============
-    // const { category } = await graphql(`
-    //     { allContentfulRealizations {
-    //             edges {
-    //                 node {
-    //                     category
-    //                 }
-    //             }
-    //         }
-    //     }
-    // `
-    // )
-
     //==============
     // Create single blog posts
     //==============
@@ -46,7 +31,6 @@ exports.createPages = async function({actions, graphql}) {
         })
     })
 
-
     //==============
     // Convert any string format to snake case format URL link friendly
     //==============
@@ -55,32 +39,15 @@ exports.createPages = async function({actions, graphql}) {
         return result.split(' ').join('_').toLowerCase();
     }
 
-
-
     //==============
     // Create a whole category lists pages
     //==============
-
-
     data.allContentfulRealizations.edges.forEach(edge => {
         const category = edge.node.category
         actions.createPage({
             path: "/realizacje/kategoria/" + `${camelToUnderscore(category)}`,
-            component: require.resolve(`./src/templates/realizacjeKategoria/realizacjeKategoria.js`),
+            component: require.resolve(`./src/pages/realizacje.js`),
             context: { category }
         })
     })
-
-        //   createPage({
-        //     // TODO: use a slugify function to create a url-friendly slug
-        //     // for `category` before using it as the path.
-        //     path: `/${camelToUnderscore(category)}`,
-        //     component: path.resolve(`src/templates/realizacje/realizacje.js`),
-        //     context: {
-        //       category,
-        //     },
-        //   })
-
-
-
 }

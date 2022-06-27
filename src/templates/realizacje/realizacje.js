@@ -26,7 +26,7 @@ import { EmojiData } from "../../components/apple-emojis/emojiData"
 const Realizacje = () => {
     const dataAll = useStaticQuery(graphql`
         query RealizationsQueryAll {
-            allContentfulRealizations {
+            allContentfulRealizations(sort: {order: DESC, fields: number}) {
                 edges {
                     node {
                         id
@@ -61,17 +61,16 @@ const Realizacje = () => {
                         return result.split(' ').join('_').toLowerCase();
                     }
                     
-                    // function NonDuplicates() {
-                    //     const Rdata = new Set 
-                    //     const filter = Rda
-                    // }
+                    function NonDuplicates() {
+                        const Rdata = new Set(node.category)
+                        const filter = Rdata
 
+                        return filter
+                    }
 
-                    
                     return (
-                        <Label key={node.id} to={'/realizacje/kategoria/' + `${camelToUnderscore(node.category)}`}>
-                            {/* {NonDuplicates()} */}
-                            sdfsdf
+                        <Label key={node.id} to={'/realizacje/kategoria/' + camelToUnderscore(node.category)}>
+                            {NonDuplicates()}
                         </Label>
                     )
                 })}
@@ -79,7 +78,7 @@ const Realizacje = () => {
             <RealizationsItemsWrapper>
                 {dataAll.allContentfulRealizations.edges.map(( {node} ) => {
                     return (
-                        <RealizationItem key={node.id} to={node.slug}>
+                        <RealizationItem key={node.number} to={'/realizacje/' + node.slug}>
                             <ContentItemWrapper>
                                 <DecoLine />
                                 <Number>{node.number}</Number>

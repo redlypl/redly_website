@@ -4,14 +4,14 @@ import {
     ArticlesWrapper,
     HeaderWrapper,
     ArticlesItemsWrapper,
-    ArticleItem,
-    ThumbnailImg,
-    PostContentWrapper,
-    Bar,
-    TagPlaceholder,
-    PublishedDate,
-    Title,
-    Description,
+    // ArticleItem,
+    // ThumbnailImg,
+    // PostContentWrapper,
+    // Bar,
+    // TagPlaceholder,
+    // PublishedDate,
+    // Title,
+    // Description,
     SocialMediaWrapper,
     
 } from "../../styles/templates/blog/blog.style"
@@ -20,40 +20,40 @@ import Header from "../../components/header/header"
 import { EmojiData } from "../../components/apple-emojis/emojiData"
 import SocialMediaInset from "../../components/socialMediaInset/socialMediaInset"
 
-const test_data = [
-    {
-        id: 1,
-        name: 'test1'
-    },
-    {
-        id: 2,
-        name: 'test2'
-    },
-    {
-        id: 3,
-        name: 'test3'
-    },
-    {
-        id: 4,
-        name: 'test4'
-    },
-    {
-        id: 5,
-        name: 'test5'
-    },
-    {
-        id: 6,
-        name: 'test6'
-    },
-    {
-        id: 7,
-        name: 'test7'
-    },
-    {
-        id: 8,
-        name: 'test8'
-    },
-    ]
+// const test_data = [
+//     {
+//         id: 1,
+//         name: 'test1'
+//     },
+//     {
+//         id: 2,
+//         name: 'test2'
+//     },
+//     {
+//         id: 3,
+//         name: 'test3'
+//     },
+//     {
+//         id: 4,
+//         name: 'test4'
+//     },
+//     {
+//         id: 5,
+//         name: 'test5'
+//     },
+//     {
+//         id: 6,
+//         name: 'test6'
+//     },
+//     {
+//         id: 7,
+//         name: 'test7'
+//     },
+//     {
+//         id: 8,
+//         name: 'test8'
+//     },
+//     ]
 
 const Articles = () => {
     return (
@@ -65,7 +65,7 @@ const Articles = () => {
                 />
             </HeaderWrapper>
             <ArticlesItemsWrapper>
-                {test_data.map((data) => {
+                {/* {test_data.map((data) => {
                     return (
                         // <motion.div
                         // ref={ref}
@@ -86,7 +86,8 @@ const Articles = () => {
                         </ArticleItem>
                         // </motion.div>
                     )
-                })}
+                })} */}
+                <h1 style={{textAlign: 'center'}}>Wkrótce!</h1>
             </ArticlesItemsWrapper>
             <SocialMediaWrapper>
                 <SocialMediaInset />
