@@ -23,10 +23,12 @@ import SocialMediaInset from "../../components/socialMediaInset/socialMediaInset
 import Header from "../../components/header/header"
 import { EmojiData } from "../../components/apple-emojis/emojiData"
 
-const Realizacje = () => {
+const Realizacje = (props) => {
     const dataAll = useStaticQuery(graphql`
-        query RealizationsQueryAll {
-            allContentfulRealizations(sort: {order: DESC, fields: number}) {
+        query {
+            allContentfulRealizations(
+                sort: {order: DESC, fields: number}
+            ) {
                 edges {
                     node {
                         id
@@ -36,47 +38,60 @@ const Realizacje = () => {
                         category
                         createdAt(formatString: "DD-MM-YYYY")
                         thumbnail {
-                            url
+                            resize(width: 720, height: 320, format: JPG) {
+                                src
+                            }
                         }
                     }
                 }
+                distinct(field: category)
             }
         }
     `)
+
+    function camelToUnderscore(key) {
+        var result = key.replace( /([A-Z])/g, "$1" );
+        return result.split(' ').join('_').toLowerCase();
+    }
+    let headerContext = null
+    let querySource = null
+    if ( window.location.pathname === "/realizacje" ) {
+        headerContext = "Wszystkie realizacje"
+        querySource = dataAll.allContentfulRealizations.edges
+    } else if ( window.location.pathname === "/realizacje/" ) {
+        headerContext = "Wszystkie realizacje"
+        querySource = dataAll.allContentfulRealizations.edges
+    } else {
+        headerContext = "Realizacje"
+        querySource = props.titleFilteredByCategory
+    }
 
     return (
         <RealizacjeWrapper>
             <HeaderWrapper>
                 <Header
-                    name="Wszystkie realizacje"
+                    name={headerContext}
                     emojiBase={EmojiData.hammer}
                 />
             </HeaderWrapper>
             <CategoryFilterBar>
                 <p>Kategoria: </p>
-                {dataAll.allContentfulRealizations.edges.map(({node}) => {
-
-                    function camelToUnderscore(key) {
-                        var result = key.replace( /([A-Z])/g, "$1" );
-                        return result.split(' ').join('_').toLowerCase();
-                    }
-                    
-                    function NonDuplicates() {
-                        const Rdata = new Set(node.category)
-                        const filter = Rdata
-
-                        return filter
-                    }
-
+                {dataAll.allContentfulRealizations.distinct.map(name => {
+                    let SculpingHref = window.location.pathname.replace("/realizacje/kategoria/", "")
+                    let invertDetector = 0
+                    if (camelToUnderscore(name) === SculpingHref) {invertDetector = 1}
                     return (
-                        <Label key={node.id} to={'/realizacje/kategoria/' + camelToUnderscore(node.category)}>
-                            {NonDuplicates()}
+                        <Label
+                            invertValue={invertDetector}
+                            to={'/realizacje/kategoria/' + camelToUnderscore(name)}
+                        >
+                            {name}
                         </Label>
                     )
                 })}
             </CategoryFilterBar>
             <RealizationsItemsWrapper>
-                {dataAll.allContentfulRealizations.edges.map(( {node} ) => {
+                {querySource.map(( {node} ) => {
                     return (
                         <RealizationItem key={node.number} to={'/realizacje/' + node.slug}>
                             <ContentItemWrapper>
@@ -90,7 +105,7 @@ const Realizacje = () => {
                             </ContentItemWrapper>
                             <ThumbnailItemWrapper
                                 className="hoverBg"
-                                background={node.thumbnail.url}
+                                background={node.thumbnail.resize.src}
                             />
                         </RealizationItem>
                     )

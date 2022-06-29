@@ -62,6 +62,9 @@ export const Label = styled(Link)`
     font-weight: 500;
     box-shadow: 0px 3px 12px #00000011;
     cursor: pointer;
+    color: black;
+    text-decoration: none;
+    filter: ${props => `invert(${props.invertValue})`};
 
     :hover {
         transform: scale(1.05);
