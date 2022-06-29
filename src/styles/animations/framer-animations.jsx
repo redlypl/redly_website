@@ -78,3 +78,16 @@ export const ScaleOneShowAnimation = {
         }
     }
 }
+export const ShowUpDelay = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+};
+export const OneItemForChild = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1 }
+}

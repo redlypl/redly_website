@@ -1,4 +1,5 @@
 import React from "react"
+import { motion } from "framer-motion";
 import { graphql, useStaticQuery } from "gatsby"
 
 import {
@@ -22,6 +23,8 @@ import {
 import SocialMediaInset from "../../components/socialMediaInset/socialMediaInset"
 import Header from "../../components/header/header"
 import { EmojiData } from "../../components/apple-emojis/emojiData"
+
+import { OneItemForChild } from "../../styles/animations/framer-animations"
 
 const Realizacje = (props) => {
     const dataAll = useStaticQuery(graphql`
@@ -65,53 +68,75 @@ const Realizacje = (props) => {
         headerContext = "Realizacje"
         querySource = props.titleFilteredByCategory
     }
-
+    let invertDetectorAll = 0
+    if (window.location.pathname === "/realizacje") {
+        invertDetectorAll = 1
+    } else if (window.location.pathname === "/realizacje/"){
+        invertDetectorAll = 1
+    } else {
+        invertDetectorAll = 0
+    }
+    
     return (
         <RealizacjeWrapper>
-            <HeaderWrapper>
-                <Header
-                    name={headerContext}
-                    emojiBase={EmojiData.hammer}
-                />
-            </HeaderWrapper>
-            <CategoryFilterBar>
-                <p>Kategoria: </p>
-                {dataAll.allContentfulRealizations.distinct.map(name => {
-                    let SculpingHref = window.location.pathname.replace("/realizacje/kategoria/", "")
-                    let invertDetector = 0
-                    if (camelToUnderscore(name) === SculpingHref) {invertDetector = 1}
-                    return (
+                <HeaderWrapper>
+                    <motion.div variants={OneItemForChild}>
+                        <Header
+                            name={headerContext}
+                            emojiBase={EmojiData.hammer}
+                        />
+                    </motion.div>
+                </HeaderWrapper>
+                <motion.div variants={OneItemForChild}>
+                    <CategoryFilterBar>
+                        <p>Kategoria: </p>
                         <Label
-                            invertValue={invertDetector}
-                            to={'/realizacje/kategoria/' + camelToUnderscore(name)}
-                        >
-                            {name}
-                        </Label>
-                    )
-                })}
-            </CategoryFilterBar>
-            <RealizationsItemsWrapper>
-                {querySource.map(( {node} ) => {
-                    return (
-                        <RealizationItem key={node.number} to={'/realizacje/' + node.slug}>
-                            <ContentItemWrapper>
-                                <DecoLine />
-                                <Number>{node.number}</Number>
-                                <HeaderWrapperItemItem>
-                                <TitleParagraph>{node.title}</TitleParagraph>
-                                <CategoryParagraph>{node.category}</CategoryParagraph>
-                                <DateParagraph>{node.createdAt}</DateParagraph>
-                                </HeaderWrapperItemItem>
-                            </ContentItemWrapper>
-                            <ThumbnailItemWrapper
-                                className="hoverBg"
-                                background={node.thumbnail.resize.src}
-                            />
-                        </RealizationItem>
-                    )
-                })}
-            </RealizationsItemsWrapper>
-            <SocialMediaInset />
+                            invertValue={invertDetectorAll}
+                            to="/realizacje"
+                        >Wszystko</Label>
+                        {dataAll.allContentfulRealizations.distinct.map(name => {
+                            let SculpingHref = window.location.pathname.replace("/realizacje/kategoria/", "")
+                            let invertDetector = 0
+                            if (camelToUnderscore(name) === SculpingHref) {invertDetector = 1}
+                            return (
+                                <Label
+                                    invertValue={invertDetector}
+                                    to={'/realizacje/kategoria/' + camelToUnderscore(name)}
+                                >
+                                    {name}
+                                </Label>
+                            )
+                        })}
+        
+                    </CategoryFilterBar>
+                </motion.div>
+                <RealizationsItemsWrapper>
+                    {querySource.map(( {node} ) => {
+                        return (
+                            <motion.div
+                                variants={OneItemForChild}
+                                key={node.number}
+                            >
+                                <RealizationItem  to={'/realizacje/' + node.slug}>
+                                    <ContentItemWrapper>
+                                        <DecoLine />
+                                        <Number>{node.number}</Number>
+                                        <HeaderWrapperItemItem>
+                                        <TitleParagraph>{node.title}</TitleParagraph>
+                                        <CategoryParagraph>{node.category}</CategoryParagraph>
+                                        <DateParagraph>{node.createdAt}</DateParagraph>
+                                        </HeaderWrapperItemItem>
+                                    </ContentItemWrapper>
+                                    <ThumbnailItemWrapper
+                                        className="hoverBg"
+                                        background={node.thumbnail.resize.src}
+                                    />
+                                </RealizationItem>
+                            </motion.div>
+                        )
+                    })}
+                </RealizationsItemsWrapper>
+                <SocialMediaInset />
         </RealizacjeWrapper>
     )
 }
