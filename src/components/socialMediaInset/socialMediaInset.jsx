@@ -11,6 +11,9 @@ import {
 
 import { SocialMediaLink, SocialMediaIcon } from "../../global/socialMediaData"
 
+import { motion } from "framer-motion";
+import { OneItemForChild } from "../../styles/animations/framer-animations"
+
 const SocialMediaData = [
     {
         icon: SocialMediaIcon.facebook,
@@ -42,16 +45,22 @@ const SocialMediaData = [
 const SocialMediaInset = () => {
     return (
         <SocialMediaInsetWrapper>
-            <Header>- Wpadnij na nasze media społecznościowe -</Header>
-            <SocialList>
-                {SocialMediaData.map((item) => {
-                    return (
-                        <SocialLink href={item.url}>
-                            <SocialItem iconBg={item.icon} sizeBg={item.size} />
-                        </SocialLink>
-                    )
-                })}
-            </SocialList>
+            <motion.div variants={OneItemForChild}>
+                <Header>- Wpadnij na nasze media społecznościowe -</Header>
+            </motion.div>
+            <motion.div variants={OneItemForChild}>
+                <SocialList>
+                    {SocialMediaData.map((item) => {
+                        return (
+                            
+                                <SocialLink href={item.url}>
+                                    <SocialItem iconBg={item.icon} sizeBg={item.size} />
+                                </SocialLink>
+                        
+                        )
+                    })}
+                </SocialList>
+            </motion.div>
         </SocialMediaInsetWrapper>
     )
 }

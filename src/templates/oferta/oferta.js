@@ -15,6 +15,9 @@ import Header from "../../components/header/header"
 import { EmojiData } from "../../components/apple-emojis/emojiData"
 import SocialMediaInset from "../../components/socialMediaInset/socialMediaInset"
 
+import { motion } from "framer-motion";
+import { OneItemForChild } from "../../styles/animations/framer-animations"
+
 import twojaFirma__svg from "../../images/ofertaIcons/twojaFirma.svg"
 import twojProdukt__svg from "../../images/ofertaIcons/twojProdukt.svg"
 import twojaStrona__svg from "../../images/ofertaIcons/twojaStrona.svg"
@@ -51,20 +54,24 @@ const Oferta = () => {
     return (
         <OfertaWrapper>
             <HeaderWrapper>
-                <Header
-                    name="Nasza oferta"
-                    emojiBase={EmojiData.hammerAndWrench}
-                />
+                <motion.div variants={OneItemForChild}>
+                    <Header
+                        name="Nasza oferta"
+                        emojiBase={EmojiData.hammerAndWrench}
+                    />
+                </motion.div>
             </HeaderWrapper>
             <OfertaBody>
                 {OfertaData.map((item) => {
                     return (
-                        <OfertaItem to={item.link}>
-                            <ImageIcon image={item.iconPath}/>
-                            <Title under={item.title}>{item.title}</Title>
-                            <Content>{item.content}</Content>
-                            <ReadMore>dowiedz się więcej</ReadMore>
-                        </OfertaItem>
+                        <motion.div variants={OneItemForChild}>
+                            <OfertaItem to={item.link}>
+                                <ImageIcon image={item.iconPath}/>
+                                <Title under={item.title}>{item.title}</Title>
+                                <Content>{item.content}</Content>
+                                <ReadMore>dowiedz się więcej</ReadMore>
+                            </OfertaItem>
+                        </motion.div>
                     )
                 })}
             </OfertaBody>

@@ -49,5 +49,6 @@ export const ContactData = {
     blog: <Paragraph>Zainteresowany <B>współpracą</B>? Zapraszamy do <B>kontaktu</B> lub przejrzenia świadczonych przez nas <LinkB to="/oferta">usług</LinkB>.</Paragraph>,
     onas: <Paragraph>Zainteresowany <B>współpracą</B>? Zapraszamy do <B>kontaktu</B> lub przejrzenia świadczonych przez nas <LinkB to="/oferta">usług</LinkB>.</Paragraph>,
     kontakt: <Paragraph>Zainteresowany <B>współpracą</B>? Zapraszamy do <B>kontaktu</B> lub przejrzenia świadczonych przez nas <LinkB to="/oferta">usług</LinkB>.</Paragraph>,
-    notfound: <Paragraph>Nie znalazłeś tego czego szukałeś? Nic straconego, <B>skontaktuj się</B> z nami lub przejrzyj <LinkB to="/oferta">nasze oferty</LinkB>.</Paragraph>
+    notfound: <Paragraph>Nie znalazłeś tego czego szukałeś? Nic straconego, <B>skontaktuj się</B> z nami lub przejrzyj <LinkB to="/oferta">nasze oferty</LinkB>.</Paragraph>,
+    realizationsArticle: <Paragraph>Zainteresowany <B>współpracą</B>? Zapraszamy do <B>kontaktu</B> lub przejrzenia świadczonych przez nas <LinkB to="/oferta">usług</LinkB>.</Paragraph>
 }
