@@ -14,15 +14,19 @@ export const AboutWrapper = styled.div`
         padding: 50px 50px;
     }
     @media (max-width: ${theme.breakpoint.tablet}) {
-        padding: 50px 30px;
+        padding: 25px 30px;
     }
     @media (max-width: ${theme.breakpoint.mobile}) {
-        padding: 50px 10px;
+        padding: 25px 10px;
     }
 `
 export const HeaderWrapper = styled.div`
-    background-color: darkgray;
     padding: 25px 0;
+
+    @media (max-width: ${ theme.breakpoint.tablet }) {
+        display: flex;
+        justify-content: center;
+    }
 `
 export const AboutBody = styled.div`
     background-color: lightblue;
@@ -62,6 +66,5 @@ export const ImagePlace = styled.div`
     height: 100%;
 `
 export const BtnWrapper = styled.div`
-    background-color: pink;
     padding: 20px 0;
 `

@@ -4,12 +4,13 @@ import Layout from "../components/layout/layout"
 
 import ONas from "../templates/o-nas/o-nas"
 import Contact from "../templates/universal/contact"
+import { ContactData } from "../templates/universal/contactData"
 
 const ONasPage = () => {
     return (
         <Layout>
             <ONas />
-            <Contact />
+            <Contact content={ ContactData.onas } />
         </Layout>
     )
 }
