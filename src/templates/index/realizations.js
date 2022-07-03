@@ -24,8 +24,10 @@ import Button from "../../components/button/button"
 
 const Realizations = () => {
   const data = useStaticQuery(graphql`
-    query RealizationsQuery {
-        allContentfulRealizations(sort: {order: DESC, fields: number}) {
+    query {
+        allContentfulRealizations(
+            sort: {order: DESC, fields: number}
+        ) {
             edges {
                 node {
                     id
@@ -35,10 +37,13 @@ const Realizations = () => {
                     category
                     createdAt(formatString: "DD-MM-YYYY")
                     thumbnail {
-                    url
+                        resize(width: 720, height: 320, format: JPG) {
+                            src
+                        }
                     }
                 }
             }
+            distinct(field: category)
         }
     }
   `)
@@ -54,7 +59,7 @@ const Realizations = () => {
       <RealizationsItemsWrapper>
         {data.allContentfulRealizations.edges.slice(0, 3).map(({node}) => {
           return (
-            <RealizationItem key={node.id} to={node.slug}>
+            <RealizationItem key={node.id} to={'/realizacje/' + node.slug}>
               <ContentItemWrapper>
                 <DecoLine />
                 <Number>{node.number}</Number>
@@ -66,7 +71,7 @@ const Realizations = () => {
               </ContentItemWrapper>
               <ThumbnailItemWrapper
                 className="hoverBg"
-                background={node.thumbnail.url}
+                background={node.thumbnail.resize.src}
               />
             </RealizationItem>
           )

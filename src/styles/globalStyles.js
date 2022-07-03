@@ -44,4 +44,21 @@ export const GlobalStyle = createGlobalStyle`
         scrollbar-color: black #0a0a0a;
         scrollbar-width: thin;
     }
+
+    //for realizations article cubes
+    #color__gray {
+        background-color: #DEDEDE;
+    }
+    #color__white {
+        background-color: #FFFFFF;
+    }
+    #color__darkGray {
+        background-color: #D5D5D5;
+    }
+    #color__darkerGray {
+        background-color: #717171;
+    }
+    #color__lightBlack {
+        background-color: #3E3E3E;
+    }
 `

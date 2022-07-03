@@ -6,28 +6,31 @@ import newsletterdecoSecond from "../../../images/contactDeco/contactdecoSecond.
 import newsletterdecoThird from "../../../images/contactDeco/contactdecoThird.jpg"
 
 export const ContactWrapper = styled.div`
-    padding: 50px 200px;
+    padding: 50px 0;
     display: flex;
     flex-direction: column;
     gap: 5px;
 
     @media (max-width: ${theme.breakpoint.desktop}) {
         gap: 5px;
-        padding: 25px 100px;
+        padding: 25px 0;
     }
     @media (max-width: ${theme.breakpoint.laptop}) {
-        padding: 25px 50px;
+        padding: 25px 0;
     }
     @media (max-width: ${theme.breakpoint.tablet}) {
-        padding: 25px 30px;
+        padding: 25px 0;
     }
     @media (max-width: ${theme.breakpoint.mobile}) {
-        padding: 25px 10px;
+        padding: 25px 0;
     }
 `
 export const HeaderWrapper = styled.div`
-    padding: 25px 0;
+    padding: 25px 200px;
 
+    @media (max-width: ${ theme.breakpoint.desktop }) {
+        padding: 25px 50px;
+    }
     @media (max-width: ${ theme.breakpoint.tablet }) {
         display: flex;
         justify-content: center;
@@ -35,21 +38,38 @@ export const HeaderWrapper = styled.div`
     }
 `
 export const UnderHeaderWrapper = styled.div`
+    padding: 0 200px;
 
+    @media (max-width: ${ theme.breakpoint.desktop }) {
+        padding: 0 50px;
+    }
 `
 export const ContactBody = styled.div`
-    padding: 0 150px;
+    padding: 0 350px;
     height: 550px;
     display: flex;
     justify-content: space-around;
     margin-top: 15px;
     gap: 20px;
+    position: relative;
+
+    ::before {
+        content: '';
+        background-color: #F0F0F0;
+        width: 100%;
+        height: 250px;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: -1;
+    }
 
     @media (max-width: ${theme.breakpoint.largeDesktop}) {
-        padding: 0 50px;
+        padding: 0 200px;
     }
     @media (max-width: ${theme.breakpoint.desktop}) {
-        padding: 0;
+        padding: 0 50px;
         height: 500px;
     }
     @media (max-width: ${theme.breakpoint.tablet}) {
@@ -57,6 +77,10 @@ export const ContactBody = styled.div`
         justify-content: flex-start;
         height: 850px;
         gap: 50px;
+
+        ::before {
+            display: none;
+        }
     }
 `
 export const ImageDeco = styled.div`

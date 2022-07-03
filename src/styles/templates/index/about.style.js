@@ -34,6 +34,7 @@ export const AboutBody = styled.div`
     display: flex;
     justify-content: space-around;
     gap: 20px;
+    padding: 0 50px;
 
     @media (max-width: ${theme.breakpoint.largeDesktop}) {
         gap: 10px;
