@@ -108,7 +108,7 @@ const ArticleContentWrapper = () => {
                     gallery
                 </ShortBlock>
             </ShortWrapper>
-            <WideBlock >
+            <WideBlock isBottom>
                 <ClientOpinionWrapper id="color__darkerGray">
                     <h1>Opinia klienta</h1>
                     <OpinionWrapper>

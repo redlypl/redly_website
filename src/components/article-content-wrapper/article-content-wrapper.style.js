@@ -40,10 +40,10 @@ export const WideBlock = styled.div`
     }
     @media (max-width: 1324px) {
         flex-direction: column;
-        height: calc(550px * 2);
         width: 100%;
         align-items: center;
         box-shadow: none;
+        height: ${({isBottom}) => isBottom ? 'auto' : 'calc(550px * 2)'};
     }
     @media (max-width: ${theme.breakpoint.tablet}) {
         width: 100%;
@@ -247,7 +247,6 @@ export const PhotoBanner = styled.div`
     }
 `
 export const ClientOpinionWrapper = styled.div`
-    background-color: red;
     height: 100%;
     width: 100%;
     border-radius: 30px;
@@ -283,6 +282,24 @@ export const OpinionWrapper = styled.div`
         font-style: italic;
         text-align: center;
         color: white;
+        padding: 0 15px;
+    }
+
+    @media (max-width: ${theme.breakpoint.largeDesktop}) {
+        margin-top: 40px;
+    }
+    @media (max-width: ${theme.breakpoint.tablet}) {
+        height: 300px;
+        width: 95%;
+        margin-top: 0px;
+        margin-bottom: 50px;
+    }
+    @media (max-width: ${theme.breakpoint.mobile}) {
+        height: auto;
+        width: 100%;
+        > p {
+            padding: 0;
+        }
     }
 `
 export const Quote = styled.div`
@@ -293,4 +310,9 @@ export const Quote = styled.div`
     background-repeat: no-repeat;
     background-position: center;
     transform: ${({isRotated}) => isRotated ? 'rotate(180deg)' : 'rotate(0)'};
+
+    @media (max-width: ${theme.breakpoint.mobile}) {
+        height: 65px;
+        width: 65px;
+    }
 `
