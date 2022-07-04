@@ -125,9 +125,9 @@ export const Item = styled(Link)`
     font-weight: ${({isMobile}) => isMobile ? '600' : '500'};
     font-style: italic;
     font-size: ${({isMobile}) => isMobile ? '25px' : '18px'};
-    color: ${({isMobile}) => isMobile ? `${theme.color.white}` : `${theme.color.darkGray}`};
+    color: ${({isMobile}) => isMobile ? `${theme.color.white}` : `${theme.color.darkGray}`} !important;
     text-transform: uppercase;
-    text-decoration: none;
+    text-decoration: none !important;
     position: relative;
 
     :after {
