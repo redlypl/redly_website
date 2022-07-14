@@ -89,6 +89,7 @@ export const ShortBlock = styled.div`
     box-shadow: 0 3px 99px rgba(0, 0, 0, 0.04);
     height: 600px;
     width: 600px;
+    position: relative;
 
     @media (max-width: ${theme.breakpoint.largeDesktop}) {
         gap: 15px;
@@ -110,16 +111,16 @@ export const ShortBlock = styled.div`
 `
 //content
 export const MainThumbnailImage = styled.div`
+    position: absolute;
+    left: 0;
+    right: 0;
     height: 100%;
     width: 100%;
-    background-image: url(${wroconsult_thumb_demo});
+    background-image: ${props => `url(${props.imageBanner})`};
     background-position: center;
     background-size: cover;
     border-radius: 0 30px 30px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-end;
+    opacity: 0.25;
 
     @media (max-width: 1324px) {
         border-radius: 0 0 30px 30px;
@@ -127,6 +128,11 @@ export const MainThumbnailImage = styled.div`
     @media (max-width: ${theme.breakpoint.tablet}) {
         border-radius: 0;
     }
+`
+export const RightColumnWrapper = styled.div`
+    position: relative;
+    height: 100%;
+    width: 100%;
 `
 export const ClientLogo = styled.div`
     height: 100px;
@@ -136,13 +142,21 @@ export const ClientLogo = styled.div`
     background-size: 60%;
     background-repeat: no-repeat;
     filter: grayscale(1);
+    position: absolute;
+    z-index: 50;
+    right: 0;
+    top: 0;
 `
 export const CreatedAtParagraph = styled.p`
+    bottom: 0;
+    right: 0;
+    z-index: 50;
+    position: absolute;
     margin: 0;
     font-weight: 500;
     font-size: 17px;
     padding: 25px 35px;
-    text-shadow: 0px 0px 50px rgba(0,0,0,0.5);
+    text-shadow: 0px 0px 25px rgba(255,255,255,1);
 `
 export const ColWrapperPosition = styled.div`
     display: flex;
@@ -234,6 +248,29 @@ export const AboutClientWarpper = styled.div`
         line-height: 28px;
     }
 `
+export const AboutClientWarpperAbsolute = styled.div`
+    padding: 10px 30px;
+    color: ${({isWhiteFont}) => isWhiteFont ? 'white' : 'black'};
+    position: absolute;
+    z-index: 60;
+    width: 100%;
+    height: 50%;
+    pointer-events: none;
+    border-radius: 30px 30px 0 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), transparent);
+
+    > h1 {
+        text-transform: uppercase;
+        width: 250px;
+        font-size: 33px;
+        line-height: 39px;
+        font-weight: 700;
+    }
+    
+    @media (max-width: ${theme.breakpoint.tablet}) {
+        border-radius: 0;
+    }
+`
 export const PhotoBanner = styled.div`
     background-image: ${props => `url(${props.image})`};
     background-size: cover;
@@ -241,6 +278,7 @@ export const PhotoBanner = styled.div`
     height: 100%;
     width: 100%;
     border-radius: 30px;
+    opacity: 0.75;
 
     @media (max-width: ${theme.breakpoint.tablet}) {
         border-radius: 0;

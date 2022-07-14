@@ -3,6 +3,9 @@ import instagram from "../images/socialMediaIcons/instagram.png"
 import github from "../images/socialMediaIcons/github.png"
 import linkedin from "../images/socialMediaIcons/linkedin.png"
 import behance from "../images/socialMediaIcons/behance.png"
+import twitter from "../images/socialMediaIcons/twitter.png"
+import youtube from "../images/socialMediaIcons/youtube.png"
+import tiktok from "../images/socialMediaIcons/tiktok.png"
 
 export const SocialMediaLink = {
     facebook: 'https://www.facebook.com/redlypl',
@@ -16,5 +19,8 @@ export const SocialMediaIcon = {
     instagram: instagram,
     github: github,
     linkedin: linkedin,
-    behance: behance
+    behance: behance,
+    twitter: twitter,
+    youtube: youtube,
+    tiktok: tiktok
 }
