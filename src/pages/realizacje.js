@@ -10,15 +10,15 @@ import Contact from "../templates/universal/contact"
 import { ContactData } from "../templates/universal/contactData"
 
 const RealizacjePage = ({
-    pageContext: { category },
-    data
-}) => {
+        pageContext: { kategoriaRealizacji },
+        data
+    }) => {
 
     let querySwitcherCat = null
-    if ( category === null ) {
+    if ( kategoriaRealizacji === null ) {
         querySwitcherCat = null
     } else {
-        querySwitcherCat = data.allContentfulRealizations.edges
+        querySwitcherCat = data.allContentfulRealizacje.edges
     }
 
     return (
@@ -32,27 +32,55 @@ const RealizacjePage = ({
 }
 
 export const query = graphql`
-    query ($category: String) {
-        allContentfulRealizations(
-        sort: {order: DESC, fields: number}
-        filter: {category: {eq: $category}}
+    query ($kategoriaRealizacji: String) {
+        allContentfulRealizacje(
+            sort: {order: DESC, fields: liczbaPorzdkowaRealizacji}
+            filter: {kategoriaRealizacji: {eq: $kategoriaRealizacji}}
         ) {
             edges {
                 node {
-                    id
-                    number
-                    title
-                    slug
-                    category
+                    liczbaPorzdkowaRealizacji
                     createdAt(formatString: "DD-MM-YYYY")
-                    thumbnail {
-                        resize(width: 720, height: 320, format: JPG) {
-                            src
-                        }
+                    nazwaKlienta
+                    slug
+                    kategoriaRealizacji
+                    kanaly
+                    uslugi
+                    opis {
+                    opis
                     }
+                    logotypKlienta {
+                        url
+                    }
+                    banerProjektu {
+                        url
+                    }
+                    kilkaSlow {
+                        kilkaSlow
+                    }
+                    banerKlient {
+                        url
+                    }
+                    banerWstep {
+                        url
+                    }
+                    wyzwanie {
+                        wyzwanie
+                    }
+                    rozwizanie {
+                        rozwizanie
+                    }
+                    efekty {
+                        url
+                    }
+                    opinia {
+                        opinia
+                    }
+                    imieNazwisko
+                    stanowisko
                 }
             }
-            distinct(field: category)
+            distinct(field: kategoriaRealizacji)
         }
     }
 `

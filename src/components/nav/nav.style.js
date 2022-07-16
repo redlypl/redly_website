@@ -2,8 +2,9 @@ import { Link } from "gatsby"
 import styled, { createGlobalStyle } from "styled-components"
 import { theme } from "../../styles/theme"
 
-import Logo2 from "../../images/logo.png"
-import Logo3 from "../../images/whiteLogo.png"
+// import Logo2 from "../../images/logo.png"
+// import Logo3 from "../../images/whiteLogo.png"
+import Logo4 from "../../images/logo_ukraine.png"
 
 export const GlobalNavStyle = createGlobalStyle`
     body {
@@ -31,7 +32,7 @@ export const NavWrapper = styled.div`
     }
 `
 export const Logo = styled(Link)`
-    background-image: ${({setShowMenu}) => setShowMenu ? `url(${Logo3})` : `url(${Logo2})`};
+    background-image: ${({setShowMenu}) => setShowMenu ? `url(${Logo4})` : `url(${Logo4})`};
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -84,7 +85,7 @@ export const Logo = styled(Link)`
         width: 100px;
     }
     @media (min-width: 768px) {
-        background-image: url(${Logo2});
+        background-image: url(${Logo4});
     }
 `
 export const Navbar = styled.div`
@@ -124,9 +125,9 @@ export const Item = styled(Link)`
     font-weight: ${({isMobile}) => isMobile ? '600' : '500'};
     font-style: italic;
     font-size: ${({isMobile}) => isMobile ? '25px' : '18px'};
-    color: ${({isMobile}) => isMobile ? `${theme.color.white}` : `${theme.color.darkGray}`};
+    color: ${({isMobile}) => isMobile ? `${theme.color.white}` : `${theme.color.darkGray}`} !important;
     text-transform: uppercase;
-    text-decoration: none;
+    text-decoration: none !important;
     position: relative;
 
     :after {

@@ -7,11 +7,11 @@ exports.createPages = async function({actions, graphql}) {
     //import all slugs and categories
     //==============
     const { data } = await graphql(`
-        { allContentfulRealizations {
+        { allContentfulRealizacje {
                 edges {
                     node {
                         slug
-                        category
+                        kategoriaRealizacji
                     }
                 }
             }
@@ -22,7 +22,7 @@ exports.createPages = async function({actions, graphql}) {
     //==============
     // Create single blog posts
     //==============
-    data.allContentfulRealizations.edges.forEach(edge => {
+    data.allContentfulRealizacje.edges.forEach(edge => {
         const slug = edge.node.slug
         actions.createPage({
             path: "/realizacje/" + slug,
@@ -42,8 +42,8 @@ exports.createPages = async function({actions, graphql}) {
     //==============
     // Create a whole category lists pages
     //==============
-    data.allContentfulRealizations.edges.forEach(edge => {
-        const category = edge.node.category
+    data.allContentfulRealizacje.edges.forEach(edge => {
+        const category = edge.node.kategoriaRealizacji
         actions.createPage({
             path: "/realizacje/kategoria/" + `${camelToUnderscore(category)}`,
             component: require.resolve(`./src/pages/realizacje.js`),

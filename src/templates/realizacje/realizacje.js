@@ -29,25 +29,53 @@ import { OneItemForChild } from "../../styles/animations/framer-animations"
 const Realizacje = (props) => {
     const dataAll = useStaticQuery(graphql`
         query {
-            allContentfulRealizations(
-                sort: {order: DESC, fields: number}
-            ) {
-                edges {
-                    node {
-                        id
-                        number
-                        title
-                        slug
-                        category
-                        createdAt(formatString: "DD-MM-YYYY")
-                        thumbnail {
-                            resize(width: 720, height: 320, format: JPG) {
-                                src
-                            }
-                        }
+        allContentfulRealizacje(
+                sort: {order: DESC, fields: liczbaPorzdkowaRealizacji}
+        ) {
+            edges {
+                node {
+                    liczbaPorzdkowaRealizacji
+                    createdAt(formatString: "DD-MM-YYYY")
+                    nazwaKlienta
+                    slug
+                    kategoriaRealizacji
+                    kanaly
+                    uslugi
+                    opis {
+                        opis
                     }
+                    logotypKlienta {
+                        url
+                    }
+                    banerProjektu {
+                        url
+                    }
+                    kilkaSlow {
+                        kilkaSlow
+                    }
+                    banerKlient {
+                        url
+                    }
+                    banerWstep {
+                        url
+                    }
+                    wyzwanie {
+                        wyzwanie
+                    }
+                    rozwizanie {
+                        rozwizanie
+                    }
+                    efekty {
+                        url
+                    }
+                    opinia {
+                        opinia
+                    }
+                    imieNazwisko
+                    stanowisko
                 }
-                distinct(field: category)
+                }
+                distinct(field: kategoriaRealizacji)
             }
         }
     `)
@@ -60,10 +88,10 @@ const Realizacje = (props) => {
     let querySource = null
     if ( window.location.pathname === "/realizacje" ) {
         headerContext = "Wszystkie realizacje"
-        querySource = dataAll.allContentfulRealizations.edges
+        querySource = dataAll.allContentfulRealizacje.edges
     } else if ( window.location.pathname === "/realizacje/" ) {
         headerContext = "Wszystkie realizacje"
-        querySource = dataAll.allContentfulRealizations.edges
+        querySource = dataAll.allContentfulRealizacje.edges
     } else {
         headerContext = "Realizacje"
         querySource = props.titleFilteredByCategory
@@ -94,7 +122,7 @@ const Realizacje = (props) => {
                             invertValue={invertDetectorAll}
                             to="/realizacje"
                         >Wszystko</Label>
-                        {dataAll.allContentfulRealizations.distinct.map(name => {
+                        {dataAll.allContentfulRealizacje.distinct.map(name => {
                             let SculpingHref = window.location.pathname.replace("/realizacje/kategoria/", "")
                             let invertDetector = 0
                             if (camelToUnderscore(name) === SculpingHref) {invertDetector = 1}
@@ -115,21 +143,21 @@ const Realizacje = (props) => {
                         return (
                             <motion.div
                                 variants={OneItemForChild}
-                                key={node.number}
+                                key={node.liczbaPorzdkowaRealizacji}
                             >
                                 <RealizationItem  to={'/realizacje/' + node.slug}>
                                     <ContentItemWrapper>
                                         <DecoLine />
-                                        <Number>{node.number}</Number>
+                                        <Number>{node.liczbaPorzdkowaRealizacji}</Number>
                                         <HeaderWrapperItemItem>
-                                        <TitleParagraph>{node.title}</TitleParagraph>
-                                        <CategoryParagraph>{node.category}</CategoryParagraph>
+                                        <TitleParagraph>{node.nazwaKlienta}</TitleParagraph>
+                                        <CategoryParagraph>{node.kategoriaRealizacji}</CategoryParagraph>
                                         <DateParagraph>{node.createdAt}</DateParagraph>
                                         </HeaderWrapperItemItem>
                                     </ContentItemWrapper>
                                     <ThumbnailItemWrapper
                                         className="hoverBg"
-                                        background={node.thumbnail.resize.src}
+                                        background={node.banerProjektu.url}
                                     />
                                 </RealizationItem>
                             </motion.div>

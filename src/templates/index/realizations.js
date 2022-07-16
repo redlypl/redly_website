@@ -24,23 +24,56 @@ import Button from "../../components/button/button"
 
 const Realizations = () => {
   const data = useStaticQuery(graphql`
-    query RealizationsQuery {
-        allContentfulRealizations(sort: {order: DESC, fields: number}) {
-            edges {
-                node {
-                    id
-                    number
-                    title
-                    slug
-                    category
-                    createdAt(formatString: "DD-MM-YYYY")
-                    thumbnail {
-                    url
-                    }
-                }
+    query {
+      allContentfulRealizacje(
+        sort: {order: DESC, fields: liczbaPorzdkowaRealizacji}
+      ) {
+        edges {
+          node {
+            liczbaPorzdkowaRealizacji
+            createdAt(formatString: "DD-MM-YYYY")
+            nazwaKlienta
+            slug
+            kategoriaRealizacji
+            kanaly
+            uslugi
+            opis {
+              opis
             }
+            logotypKlienta {
+              url
+            }
+            banerProjektu {
+              url
+            }
+            kilkaSlow {
+              kilkaSlow
+            }
+            banerKlient {
+              url
+            }
+            banerWstep {
+              url
+            }
+            wyzwanie {
+              wyzwanie
+            }
+            rozwizanie {
+              rozwizanie
+            }
+            efekty {
+              url
+            }
+            opinia {
+              opinia
+            }
+            imieNazwisko
+            stanowisko
+            }
+          }
+          distinct(field: kategoriaRealizacji)
         }
-    }
+      }
   `)
 
   return (
@@ -52,21 +85,21 @@ const Realizations = () => {
         />
       </HeaderWrapper>
       <RealizationsItemsWrapper>
-        {data.allContentfulRealizations.edges.slice(0, 3).map(({node}) => {
+        {data.allContentfulRealizacje.edges.slice(0, 3).map(({node}) => {
           return (
-            <RealizationItem key={node.id} to={node.slug}>
+            <RealizationItem key={node.id} to={'/realizacje/' + node.slug}>
               <ContentItemWrapper>
                 <DecoLine />
-                <Number>{node.number}</Number>
+                <Number>{node.liczbaPorzdkowaRealizacji}</Number>
                 <HeaderWrapperItemItem>
-                  <TitleParagraph>{node.title}</TitleParagraph>
-                  <CategoryParagraph>{node.category}</CategoryParagraph>
+                  <TitleParagraph>{node.nazwaKlienta}</TitleParagraph>
+                  <CategoryParagraph>{node.kategoriaRealizacji}</CategoryParagraph>
                   <DateParagraph>{node.createdAt}</DateParagraph>
                 </HeaderWrapperItemItem>
               </ContentItemWrapper>
               <ThumbnailItemWrapper
                 className="hoverBg"
-                background={node.thumbnail.url}
+                background={node.banerProjektu.url}
               />
             </RealizationItem>
           )

@@ -8,7 +8,7 @@ import clipPathPngMobile from "../../../images/realizations-clip-path-mobile.png
 import cursorPointer from "../../../images/cursor-pointer-finger-emoji.png"
 
 export const RealizationsWrapper = styled.div`
-    padding: 50px 200px;
+    padding: 0 200px;
     display: flex;
     flex-direction: column;
     gap: 25px;
@@ -21,14 +21,14 @@ export const RealizationsWrapper = styled.div`
         height: 250px;
         position: absolute;
         left: 0;
-        top: 50%;
+        top: 53.3%; 
         transform: translateY(-50%);
         z-index: -1;
     }
 
     @media (max-width: ${theme.breakpoint.desktop}) {
         gap: 5px;
-        padding: 25px 100px;
+        padding: 25px 50px;
     }
     @media (max-width: ${theme.breakpoint.laptop}) {
         padding: 25px 50px;
@@ -38,7 +38,7 @@ export const RealizationsWrapper = styled.div`
     }
 `
 export const HeaderWrapper = styled.div`
-    padding: 25px 0;
+    padding: 65px 0;
 
     @media (max-width: ${ theme.breakpoint.tablet }) {
         display: flex;
@@ -55,7 +55,7 @@ export const RealizationsItemsWrapper = styled.div`
     @media (max-width: ${theme.breakpoint.largeDesktop}) {
         padding: 0 50px;
     }
-    @media (max-width: ${theme.breakpoint.desktop}) {
+    @media (max-width: ${theme.breakpoint.laptop}) {
         padding: 0;
     }
 `
@@ -89,7 +89,7 @@ export const RealizationItem = styled(Link)`
     }
 `
 export const BtnWrapper = styled.div`
-    padding: 20px 0;
+    padding: 40px 0 0 0;
     display: flex;
 
     @media (max-width: ${theme.breakpoint.tablet}) {

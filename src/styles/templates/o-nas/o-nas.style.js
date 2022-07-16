@@ -1,6 +1,8 @@
 import styled from "styled-components"
 import { theme } from "../../theme"
 
+import WroconsultLogo from "../../../images/wroconsult.png"
+
 export const ONasWrapper = styled.div`
     padding: 50px 200px;
     display: flex;
@@ -22,8 +24,7 @@ export const ONasWrapper = styled.div`
     }
 `
 export const HeaderWrapper = styled.div`
-    padding: 25px 0;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 
     @media (max-width: ${ theme.breakpoint.tablet }) {
         display: flex;
@@ -31,7 +32,6 @@ export const HeaderWrapper = styled.div`
     }
 `
 export const RealizationsItemsWrapper = styled.div`
-    background-color: darkcyan;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -58,5 +58,76 @@ export const RealizationItem = styled.div`
     }
     @media (max-width: ${theme.breakpoint.mobile}) {
         height: 150px;
+    }
+`
+export const NormalTextBlockWrapper = styled.div`
+    padding: 0 100px;
+
+    > h1 {
+        font-weight: 600;
+    }
+    > p {
+        font-weight: 400;
+    }
+
+    @media (max-width: ${theme.breakpoint.laptop}) {
+        padding: 0;
+    }
+`
+export const ListWhatWeDoingWrapper = styled.div`
+    margin-bottom: 50px;
+
+    > h1 {
+        font-weight: 600;
+        text-align: center;
+    }
+    > div {
+        font-weight: 400;
+        text-align: center;
+    }
+`
+export const LogoSwapWrapper = styled.div`
+    display: flex;
+    align-items: center;
+
+    @media (max-width: ${theme.breakpoint.laptop}) {
+        flex-direction: column;
+    }
+`
+export const ListWrapper = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    @media (max-width: ${theme.breakpoint.laptop}) {
+        flex-wrap: wrap;
+
+        > div {
+            padding: 10px 0;
+        }
+    }
+`
+export const BreakLine = styled.div`
+    background-color: #B0B0B0;
+    height: 25px;
+    width: 2px;
+    margin: 0 25px;
+
+    @media (max-width: ${theme.breakpoint.laptop}) {
+        display: none;
+    }
+`
+export const LogoPlacement = styled.div`
+    background-image: url(${WroconsultLogo});
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100px;
+    width: 410px;
+    background-size: 100%;
+    margin: 0 40px;
+
+    @media (max-width: ${theme.breakpoint.laptop}) {
+        width: 150px;
     }
 `
