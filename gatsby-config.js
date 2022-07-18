@@ -1,13 +1,25 @@
+if (process.env.STAGING) {
+  require("dotenv").config({
+    path: `.env.${process.env.NODE_ENV}.prod`
+  })
+} else {
+  require("dotenv").config({
+    path: `.env.${process.env.NODE_ENV}`
+  })
+}
+
 module.exports = {
   siteMetadata: {
     title: `Redly - Agencja Reklamowa`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://www.redly.pl`
   },
   plugins: [{
     resolve: 'gatsby-source-contentful',
     options: {
-      "accessToken": "UmEaUAQ-sbH8ZONRvbgFSf8rdGT1kq6wDDU6guB4CsQ",
-      "spaceId": "jqub8nvgwkb4"
+      // "accessToken": `${process.env.CONTENTFUL_ACCESS_TOKEN}`,
+      // "spaceId": `${process.env.CONTENTFUL_SPACE_ID}`
+      "accessToken": `UmEaUAQ-sbH8ZONRvbgFSf8rdGT1kq6wDDU6guB4CsQ`,
+      "spaceId": `jqub8nvgwkb4`
     }
   }, "gatsby-plugin-styled-components", {
     resolve: 'gatsby-plugin-google-analytics',
