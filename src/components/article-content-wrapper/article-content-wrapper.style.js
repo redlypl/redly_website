@@ -1,7 +1,6 @@
 import styled from "styled-components"
 import { theme } from "../../styles/theme"
 
-import wroconsult_thumb_demo from "../../images/demo/wroconsult_thumb.png"
 import wroconsult_logo_demo from "../../images/wroconsult.png"
 
 import quoteImg from "../../images/quote_symbol.png"

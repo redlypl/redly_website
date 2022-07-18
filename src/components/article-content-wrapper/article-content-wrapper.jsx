@@ -29,12 +29,6 @@ import {
 
 import { SocialMediaIcon } from "../../global/socialMediaData"
 
-import wroFirst from "../../images/demo/demo_gallery/wroconsult_example/1.png"
-import dfgdfg from "../../images/demo/demo_gallery/wroconsult_example/2.png"
-import dfgdrtdfgfgdg from "../../images/demo/demo_gallery/wroconsult_example/3.png"
-import dfgd from "../../images/demo/demo_gallery/wroconsult_example/4.png"
-import ddgfgdfrgdrrgdddgfg from "../../images/demo/demo_gallery/wroconsult_example/5.png"
-
 const ArticleContentWrapper = (props) => {
 
     let galleryImageArray = props.contentGraph.efekty.map(function (obj) {return obj.url})

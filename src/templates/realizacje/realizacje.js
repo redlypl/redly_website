@@ -1,6 +1,7 @@
 import React from "react"
 import { motion } from "framer-motion";
 import { graphql, useStaticQuery } from "gatsby"
+import { useLocation } from "@reach/router"
 
 import {
     RealizacjeWrapper,
@@ -27,6 +28,7 @@ import { EmojiData } from "../../components/apple-emojis/emojiData"
 import { OneItemForChild } from "../../styles/animations/framer-animations"
 
 const Realizacje = (props) => {
+    const location = useLocation()
     const dataAll = useStaticQuery(graphql`
         query {
         allContentfulRealizacje(
@@ -86,10 +88,10 @@ const Realizacje = (props) => {
     }
     let headerContext = null
     let querySource = null
-    if ( window.location.pathname === "/realizacje" ) {
+    if ( location.pathname === "/realizacje" ) {
         headerContext = "Wszystkie realizacje"
         querySource = dataAll.allContentfulRealizacje.edges
-    } else if ( window.location.pathname === "/realizacje/" ) {
+    } else if ( location.pathname === "/realizacje/" ) {
         headerContext = "Wszystkie realizacje"
         querySource = dataAll.allContentfulRealizacje.edges
     } else {
@@ -97,9 +99,9 @@ const Realizacje = (props) => {
         querySource = props.titleFilteredByCategory
     }
     let invertDetectorAll = 0
-    if (window.location.pathname === "/realizacje") {
+    if (location.pathname === "/realizacje") {
         invertDetectorAll = 1
-    } else if (window.location.pathname === "/realizacje/"){
+    } else if (location.pathname === "/realizacje/"){
         invertDetectorAll = 1
     } else {
         invertDetectorAll = 0
@@ -123,7 +125,7 @@ const Realizacje = (props) => {
                             to="/realizacje"
                         >Wszystko</Label>
                         {dataAll.allContentfulRealizacje.distinct.map(name => {
-                            let SculpingHref = window.location.pathname.replace("/realizacje/kategoria/", "")
+                            let SculpingHref = location.pathname.replace("/realizacje/kategoria/", "")
                             let invertDetector = 0
                             if (camelToUnderscore(name) === SculpingHref) {invertDetector = 1}
                             return (
