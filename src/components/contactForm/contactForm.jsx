@@ -41,8 +41,13 @@ const ContactForm = () => {
             email: Yup.string().email('Niepoprawny adres email').required('To pole jest wymagane'),
             message: Yup.string().required('To pole jest wymagane')
         }),
-        onSubmit: (values) => {
-            axios.post('https://j1lg4ofwl4.execute-api.eu-north-1.amazonaws.com/dev/contact', values)
+        onSubmit: values => {
+            axios.post('https://j1lg4ofwl4.execute-api.eu-north-1.amazonaws.com/dev/contact', {
+                name: values.name,
+                email: values.email,
+                message: values.message,
+                actualpage: {actualpage}
+            })
             setIsSent(true)
         }
     })
