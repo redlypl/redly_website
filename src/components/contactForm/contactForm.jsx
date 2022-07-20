@@ -42,7 +42,7 @@ const ContactForm = () => {
             message: Yup.string().required('To pole jest wymagane')
         }),
         onSubmit: (values) => {
-            axios.post('https://d-eqbzg5brtg.execute-api.eu-north-1.amazonaws.com/prod/contact', values)
+            axios.post('https://j1lg4ofwl4.execute-api.eu-north-1.amazonaws.com/dev/contact', values)
             setIsSent(true)
         }
     })
