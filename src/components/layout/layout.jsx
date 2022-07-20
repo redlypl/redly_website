@@ -2,6 +2,7 @@ import React from "react"
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet"
 import { GlobalStyle } from "../../styles/globalStyles"
+import { useLocation } from "@reach/router"
 
 import {
     LayoutWrapper,
@@ -13,11 +14,26 @@ import Navbar from "../nav/nav"
 import { ShowUpDelay } from "../../styles/animations/framer-animations"
 
 const Layout = (props) => {
+    let TitlePagePath = useLocation().pathname
+    function upperCaseFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1)
+    }
+    const PageDinamicalTitleFunction = upperCaseFirstLetter(useLocation().pathname.replace('/','').replace('/','').replace('-',' '))
+    let PageDinamicalTitle = ''
+
+    if (TitlePagePath === '/') {
+        PageDinamicalTitle = <title>Redly - Agencja Reklamowa</title>
+    } else if (TitlePagePath.startsWith('/realizacje/kategoria') === true ) {
+        PageDinamicalTitle = <title>Realizacje | Agencja Reklamowa - Redly</title>
+    } else {
+        PageDinamicalTitle = <title>{PageDinamicalTitleFunction} | Agencja Reklamowa - Redly</title>
+    } 
+
     return (
         <LayoutWrapper>
             <GlobalStyle />
             <Helmet>
-                <title>Redly - Agencja Reklamowa</title>
+                {PageDinamicalTitle}
             </Helmet>
             <Navbar />
                 <motion.div
