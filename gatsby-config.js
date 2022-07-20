@@ -14,6 +14,10 @@ module.exports = {
     siteUrl: `https://www.redly.pl`
   },
   plugins: [{
+    resolve: 'gatsby-plugin-htaccess',
+      options: {
+        https: true,
+      },
     resolve: 'gatsby-source-contentful',
     options: {
       // "accessToken": `${process.env.CONTENTFUL_ACCESS_TOKEN}`,
