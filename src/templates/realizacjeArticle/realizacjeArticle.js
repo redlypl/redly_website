@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { Helmet } from "react-helmet"
 
 import Layout from "../../components/layout/layout"
 import ArticleContentWrapper from "../../components/article-content-wrapper/article-content-wrapper"
@@ -13,6 +14,9 @@ const RealizacjeArticle = ({ data }) => {
 
     return (
         <Layout>
+            <Helmet>
+                <title>Realizacja {data.contentfulRealizacje.nazwaKlienta} | Agencja Reklamowa - Redly</title>
+            </Helmet>
             <ArticleContentWrapper contentGraph={bodyArticle}/>
             <SocialMediaInset />
             <Contact content={ ContactData.realizationsArticle } />
