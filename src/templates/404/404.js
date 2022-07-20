@@ -1,6 +1,7 @@
 import React from "react"
 import Button from "../../components/button/button"
-import { motion } from "framer-motion";
+import { motion } from "framer-motion"
+import { Helmet } from "react-helmet"
 
 import {
     HeroWrapper,
@@ -21,9 +22,13 @@ import {
 import AppleEmojis from "../../components/apple-emojis/apple-emojis-big";
 import { EmojiData } from "../../components/apple-emojis/emojiData";
 
+
 const NotFound = () => {
     return (
         <HeroWrapper>
+            <Helmet>
+                <title>Redly - Agencja Reklamowa</title>
+            </Helmet>
             <Top>
                 <ContentSide>
                     <motion.div
