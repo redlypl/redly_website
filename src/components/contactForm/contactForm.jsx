@@ -1,6 +1,8 @@
 import React, { useState } from "react"
 import { useFormik } from "formik"
 import * as Yup from "yup"
+import { useLocation } from "@reach/router"
+import axios from "axios"
 
 import {
     ContactFormWrapper,
@@ -26,6 +28,7 @@ import AppleEmojis from "../apple-emojis/apple-emojis-custom1"
 import { EmojiData } from "../apple-emojis/emojiData"
 
 const ContactForm = () => {
+    const actualpage = useLocation().href
     const [isSent, setIsSent] = useState(false)
 
     const formik = useFormik({
@@ -38,8 +41,8 @@ const ContactForm = () => {
             email: Yup.string().email('Niepoprawny adres email').required('To pole jest wymagane'),
             message: Yup.string().required('To pole jest wymagane')
         }),
-        onSubmit: values => {
-            // axios.post('domain.example', values)
+        onSubmit: (values) => {
+            axios.post('https://d-eqbzg5brtg.execute-api.eu-north-1.amazonaws.com/prod/contact', values)
             setIsSent(true)
         }
     })
