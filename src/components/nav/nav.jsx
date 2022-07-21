@@ -94,7 +94,7 @@ const Nav = () => {
     return (
         <NavWrapper id=".">
             <GlobalNavStyle setShowMenu={showMenu} />
-            <Logo to="/" setShowMenu={showMenu} onClick={() => setShowMenu(!showMenu)}/>
+            <Logo aria-label="Strona główna" to="/" setShowMenu={showMenu} onClick={() => setShowMenu(!showMenu)}/>
             <Navbar>
                 {navbarData.map((navbar) => {
                     return (

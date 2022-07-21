@@ -34,15 +34,18 @@ const HeroData = {
 const socialMediaData = [
   {
     title: 'Instagram / ',
-    url: SocialMediaLink.instagram
+    url: SocialMediaLink.instagram,
+    aria: 'Instagram'
   },
   {
     title: 'Behance / ',
-    url: SocialMediaLink.behance
+    url: SocialMediaLink.behance,
+    aria: 'Behance'
   },
   {
     title: 'Github',
-    url: SocialMediaLink.github
+    url: SocialMediaLink.github,
+    aria: 'Github'
   },
 ]
 
@@ -83,11 +86,11 @@ const Hero = () => {
         <SocialMediaSection>
           {socialMediaData.map((item) => {
             return (
-              <SocialItem key={item.title} href={item.url} >{item.title}</SocialItem>
+              <SocialItem key={item.title} aria-label={item.aria} href={item.url} >{item.title}</SocialItem>
             )
           })}
         </SocialMediaSection>
-        <PoweredBy><p>Wspierane przez </p><WroconsultLogo href="https://wroconsult.pl" /></PoweredBy>
+        <PoweredBy><p>Wspierane przez </p><WroconsultLogo aria-label="Strona Wroconsult" href="https://wroconsult.pl" /></PoweredBy>
       </Bottom>
     </HeroWrapper>
   )

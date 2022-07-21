@@ -32,8 +32,16 @@ const Layout = (props) => {
     return (
         <LayoutWrapper>
             <GlobalStyle />
-            <Helmet>
+            <Helmet htmlAttributes={{
+                lang: 'en',
+            }}>
                 {PageDinamicalTitle}
+                <meta
+                    name="description"
+                    content="Jesteśmy agencją reklamową z nowoczesnym spojrzeniem na marketing. Nasze założenia są bardzo proste - Ty zajmiesz się tym na czym najbardziej się znasz, a my sprawimy że odpowiednie osoby dowiedzą się o twojej działalności."
+                />
+                <meta charSet="utf-8" />
+                <meta content="width=device-width, initial-scale=1.0" name="viewport" />
             </Helmet>
             <Navbar />
                 <motion.div
