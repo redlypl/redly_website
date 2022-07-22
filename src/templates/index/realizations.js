@@ -36,9 +36,7 @@ const Realizations = () => {
             slug
             kategoriaRealizacji
             banerProjektu {
-              resize(format: WEBP, height: 1000) {
-                src
-              }
+              url
             }
             }
           }
@@ -70,7 +68,7 @@ const Realizations = () => {
               </ContentItemWrapper>
               <ThumbnailItemWrapper
                 className="hoverBg"
-                background={node.banerProjektu.resize.src}
+                background={node.banerProjektu.url}
               />
             </RealizationItem>
           )
