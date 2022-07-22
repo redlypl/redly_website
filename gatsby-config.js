@@ -28,7 +28,8 @@ module.exports = {
   }, "gatsby-plugin-styled-components", {
     resolve: 'gatsby-plugin-google-analytics',
     options: {
-      "trackingId": "G-8NN2HBELV0"
+      trackingId: "G-8NN2HBELV0",
+      head: true
     }
   }, "gatsby-plugin-image", "gatsby-plugin-react-helmet", "gatsby-plugin-sitemap", {
     resolve: 'gatsby-plugin-manifest',
