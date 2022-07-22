@@ -45,7 +45,9 @@ export const query = graphql`
                     slug
                     kategoriaRealizacji
                     banerProjektu {
-                        url
+                        resize(format: WEBP, height: 1000) {
+                            src
+                        }
                     }
                 }
             }
