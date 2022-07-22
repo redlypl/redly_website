@@ -42,6 +42,7 @@ const Layout = (props) => {
                 />
                 <meta charSet="utf-8" />
                 <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+                <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
             </Helmet>
             <Navbar />
                 <motion.div
