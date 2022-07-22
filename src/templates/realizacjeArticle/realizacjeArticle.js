@@ -38,27 +38,19 @@ export const query = graphql`
                 opis
             }
             logotypKlienta {
-                resize(format: WEBP, height: 1000) {
-                    src
-                }
+                url
             }
             banerProjektu {
-                resize(format: WEBP, height: 1000) {
-                    src
-                }
+                url
             }
             kilkaSlow {
                 kilkaSlow
             }
             banerKlient {
-                resize(format: WEBP, height: 1000) {
-                    src
-                }
+                url
             }
             banerWstep {
-                resize(format: WEBP, height: 1000) {
-                    src
-                }
+                url
             }
             wyzwanie {
                 wyzwanie
@@ -67,9 +59,7 @@ export const query = graphql`
                 rozwizanie
             }
             efekty {
-                resize(format: WEBP, height: 1000) {
-                    src
-                }
+                url
             }
             opinia {
                 opinia
