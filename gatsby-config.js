@@ -15,6 +15,22 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-robots-txt',
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        // You can add multiple tracking ids and a pageview event will be fired for all of them.
+        trackingIds: [
+          "G-8NN2HBELV0", // Google Analytics / GA
+         // "AW-CONVERSION_ID", // Google Ads / Adwords / AW
+         // "DC-FLOODIGHT_ID", // Marketing Platform advertising products (Display & Video 360, Search Ads 360, and Campaign Manager)
+        ],
+        // This object is used for configuration specific to this plugin
+        pluginConfig: {
+          // Puts tracking script in the head instead of the body
+          head: false,
+        },
+      },
+    },
   {
     resolve: 'gatsby-plugin-htaccess',
       options: {
@@ -25,13 +41,7 @@ module.exports = {
       "accessToken": `${process.env.CONTENTFUL_ACCESS_TOKEN}`,
       "spaceId": `${process.env.CONTENTFUL_SPACE_ID}`
     }
-  }, "gatsby-plugin-styled-components", {
-    resolve: 'gatsby-plugin-google-analytics',
-    options: {
-      trackingId: "G-8NN2HBELV0",
-      head: true
-    }
-  }, "gatsby-plugin-image", "gatsby-plugin-react-helmet", "gatsby-plugin-sitemap", {
+  }, "gatsby-plugin-styled-components", "gatsby-plugin-image", "gatsby-plugin-react-helmet", "gatsby-plugin-sitemap", {
     resolve: 'gatsby-plugin-manifest',
     options: {
       "icon": `./src/images/favicons/icon.png`,
