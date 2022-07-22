@@ -1,10 +1,7 @@
 import styled from "styled-components"
 import { theme } from "../../../styles/theme"
 
-import SculptureDecoBg from "../../../images/heroImg/sculptureDecoX.png"
-import SculptureBg from "../../../images/heroImg/sculpture.png"
 import WroconsultLogoBg from "../../../images/wroconsult.png"
-import gradientCircle from "../../../images/gradientCircle.png"
 
 import cursorPointer from "../../../images/cursor-pointer-finger-emoji.png"
 
@@ -37,7 +34,7 @@ export const Top = styled.div`
     height: 600px;
     width: 80%;
     gap: 10px;
-    background-image: url(${gradientCircle});
+    background-image: url(${props => props.propsImageCircle});
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -116,7 +113,7 @@ export const Sculpture = styled.div`
     width: 70%;
     background-size: 65%;
     background-repeat: no-repeat;
-    background-image: url(${SculptureBg});
+    background-image: url(${props => props.propsImage});
     background-position: center;
     animation-name: slideSculpN;
     animation-duration: 2s;
@@ -139,7 +136,7 @@ export const Sculpture = styled.div`
     }
 `
 export const DecoSculpture = styled.div`
-    background-image: url(${SculptureDecoBg});
+    background-image: url(${props => props.propsImageDeco});
     background-size: 70%;
     background-repeat: no-repeat;
     background-position: center;

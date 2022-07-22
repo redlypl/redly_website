@@ -1,4 +1,6 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import { motion } from "framer-motion";
 
 import {
   ContactWrapper,
@@ -15,10 +17,22 @@ import Header from "../../components/header/header"
 import { EmojiData } from "../../components/apple-emojis/emojiData"
 import ContactForm from "../../components/contactForm/contactForm"
 
-import { motion } from "framer-motion";
 import { OneItemForChild } from "../../styles/animations/framer-animations"
 
 const Contact = (props) => {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        featureimg: file(relativePath: {eq: "contactDeco/contactdecoFirst.jpg"}) {
+          childImageSharp {
+            fluid(quality: 100) {
+              ...GatsbyImageSharpFluid_withWebp_noBase64
+            }
+          }
+        }
+      }
+    `
+  )
 
   let underHeader = '' 
 
@@ -46,7 +60,7 @@ const Contact = (props) => {
       <motion.div variants={OneItemForChild}>
         <ContactBody>
           <ImageDeco>
-            <ImageDecorationContact />
+            <ImageDecorationContact ContactImage={data.featureimg.childImageSharp.fluid.srcWebp}  />
           </ImageDeco>
           <ContactFormWrapper>
             <ContactForm />
