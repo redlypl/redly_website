@@ -31,7 +31,7 @@ import { SocialMediaIcon } from "../../global/socialMediaData"
 
 const ArticleContentWrapper = (props) => {
 
-    let galleryImageArray = props.contentGraph.efekty.map(function (obj) {return obj.url})
+    let galleryImageArray = props.contentGraph.efekty.map(function (obj) {return obj.resize.src})
 
     return (
         <ContentWrapper>
@@ -94,7 +94,7 @@ const ArticleContentWrapper = (props) => {
                     <RightColumnWrapper>
                         <ClientLogo />
                         <CreatedAtParagraph>{props.contentGraph.createdAt}</CreatedAtParagraph>
-                        <MainThumbnailImage imageBanner={props.contentGraph.banerProjektu.url} />
+                        <MainThumbnailImage imageBanner={props.contentGraph.banerProjektu.resize.src} />
                     </RightColumnWrapper>
                 </Col>
             </WideBlock>
@@ -106,10 +106,10 @@ const ArticleContentWrapper = (props) => {
                     </AboutClientWarpper>
                 </ShortBlock>
                 <ShortBlock>
-                    <PhotoBanner image={props.contentGraph.banerKlient.url}/>
+                    <PhotoBanner image={props.contentGraph.banerKlient.resize.src}/>
                 </ShortBlock>
                 <ShortBlock>
-                    <PhotoBanner image={props.contentGraph.banerWstep.url}/>
+                    <PhotoBanner image={props.contentGraph.banerWstep.resize.src}/>
                 </ShortBlock>
                 <ShortBlock id="color__darkGray">
                     <AboutClientWarpper>
