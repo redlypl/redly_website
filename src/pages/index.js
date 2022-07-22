@@ -37,21 +37,21 @@ export const query = graphql`
 query images {
     sculpture: file(relativePath: {eq: "heroImg/sculpture.png"}) {
       childImageSharp {
-        fluid(quality: 100) {
+        fluid(quality: 50) {
           ...GatsbyImageSharpFluid_withWebp_noBase64
         }
       }
     }
     sculptureDecoX: file(relativePath: {eq: "heroImg/sculptureDecoX.png"}) {
       childImageSharp {
-        fluid(quality: 100) {
+        fluid(quality: 50) {
           ...GatsbyImageSharpFluid_withWebp_noBase64
         }
       }
     }
     gradientCircle: file(relativePath: {eq: "gradientCircle.png"}) {
       childImageSharp {
-        fluid(quality: 100) {
+        fluid(quality: 50) {
           ...GatsbyImageSharpFluid_withWebp_noBase64
         }
       }
