@@ -13,17 +13,17 @@ module.exports = {
     title: `Redly - Agencja Reklamowa`,
     siteUrl: `https://www.redly.pl`
   },
-  plugins: [{
+  plugins: [
+    'gatsby-plugin-robots-txt',
+  {
     resolve: 'gatsby-plugin-htaccess',
       options: {
         https: true,
       },
     resolve: 'gatsby-source-contentful',
     options: {
-      // "accessToken": `${process.env.CONTENTFUL_ACCESS_TOKEN}`,
-      // "spaceId": `${process.env.CONTENTFUL_SPACE_ID}`
-      "accessToken": `UmEaUAQ-sbH8ZONRvbgFSf8rdGT1kq6wDDU6guB4CsQ`,
-      "spaceId": `jqub8nvgwkb4`
+      "accessToken": `${process.env.CONTENTFUL_ACCESS_TOKEN}`,
+      "spaceId": `${process.env.CONTENTFUL_SPACE_ID}`
     }
   }, "gatsby-plugin-styled-components", {
     resolve: 'gatsby-plugin-google-analytics',
