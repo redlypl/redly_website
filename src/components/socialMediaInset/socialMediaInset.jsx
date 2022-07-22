@@ -18,27 +18,32 @@ const SocialMediaData = [
     {
         icon: SocialMediaIcon.facebook,
         url: SocialMediaLink.facebook,
-        size: '30%'
+        size: '30%',
+        aria: 'Facebook'
     },
     {
         icon: SocialMediaIcon.instagram,
         url: SocialMediaLink.instagram,
-        size: '48%'
+        size: '48%',
+        aria: 'Instagram'
     },
     {
         icon: SocialMediaIcon.github,
         url: SocialMediaLink.github,
-        size: '52%'
+        size: '52%',
+        aria: 'Github'
     },
     {
         icon: SocialMediaIcon.linkedin,
         url: SocialMediaLink.linkedin,
-        size: '45%'
+        size: '45%',
+        aria: 'Linkedin'
     },
     {
         icon: SocialMediaIcon.behance,
         url: SocialMediaLink.behance,
-        size: '63%'
+        size: '63%',
+        aria: 'Behance'
     },
 ]
 
@@ -53,7 +58,7 @@ const SocialMediaInset = () => {
                     {SocialMediaData.map((item) => {
                         return (
                             
-                                <SocialLink href={item.url}>
+                                <SocialLink aria-label={item.aria} href={item.url}>
                                     <SocialItem iconBg={item.icon} sizeBg={item.size} />
                                 </SocialLink>
                         

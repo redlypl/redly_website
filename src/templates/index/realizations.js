@@ -35,40 +35,11 @@ const Realizations = () => {
             nazwaKlienta
             slug
             kategoriaRealizacji
-            kanaly
-            uslugi
-            opis {
-              opis
-            }
-            logotypKlienta {
-              url
-            }
             banerProjektu {
-              url
+              resize(format: WEBP, height: 1000) {
+                src
+              }
             }
-            kilkaSlow {
-              kilkaSlow
-            }
-            banerKlient {
-              url
-            }
-            banerWstep {
-              url
-            }
-            wyzwanie {
-              wyzwanie
-            }
-            rozwizanie {
-              rozwizanie
-            }
-            efekty {
-              url
-            }
-            opinia {
-              opinia
-            }
-            imieNazwisko
-            stanowisko
             }
           }
           distinct(field: kategoriaRealizacji)
@@ -99,7 +70,7 @@ const Realizations = () => {
               </ContentItemWrapper>
               <ThumbnailItemWrapper
                 className="hoverBg"
-                background={node.banerProjektu.url}
+                background={node.banerProjektu.resize.src}
               />
             </RealizationItem>
           )

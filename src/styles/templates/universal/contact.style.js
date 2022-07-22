@@ -1,7 +1,6 @@
 import styled from "styled-components"
 import { theme } from "../../theme"
 
-import newsletterdecoFirst from "../../../images/contactDeco/contactdecoFirst.jpg"
 import newsletterdecoSecond from "../../../images/contactDeco/contactdecoSecond.jpg"
 import newsletterdecoThird from "../../../images/contactDeco/contactdecoThird.jpg"
 
@@ -95,7 +94,7 @@ export const ContactFormWrapper = styled.div`
     height: 100%;
 `
 export const ImageDecorationContact = styled.div`
-    background-image: url(${newsletterdecoFirst});
+    background-image: url(${props => props.ContactImage});
     background-size: cover;
     background-position: 0 50%;
     height: 85%;

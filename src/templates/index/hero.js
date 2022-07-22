@@ -49,10 +49,10 @@ const socialMediaData = [
   },
 ]
 
-const Hero = () => {
+const Hero = (props) => {
   return (
     <HeroWrapper>
-      <Top>
+      <Top propsImageCircle={props.GradientCircle}>
         <ContentSide>
           <motion.div
             variants={HeaderAnimation}
@@ -77,8 +77,8 @@ const Hero = () => {
           </motion.div>
         </ContentSide>
         <SculptureSide>
-          <DecoSculpture>
-            <Sculpture />
+          <DecoSculpture propsImageDeco={props.SculptureDecoXImageProps}>
+            <Sculpture propsImage={props.SculptureImageProps} />
           </DecoSculpture>
         </SculptureSide>
       </Top>

@@ -44,40 +44,11 @@ export const query = graphql`
                     nazwaKlienta
                     slug
                     kategoriaRealizacji
-                    kanaly
-                    uslugi
-                    opis {
-                    opis
-                    }
-                    logotypKlienta {
-                        url
-                    }
                     banerProjektu {
-                        url
+                        resize(format: WEBP, height: 1000) {
+                            src
+                        }
                     }
-                    kilkaSlow {
-                        kilkaSlow
-                    }
-                    banerKlient {
-                        url
-                    }
-                    banerWstep {
-                        url
-                    }
-                    wyzwanie {
-                        wyzwanie
-                    }
-                    rozwizanie {
-                        rozwizanie
-                    }
-                    efekty {
-                        url
-                    }
-                    opinia {
-                        opinia
-                    }
-                    imieNazwisko
-                    stanowisko
                 }
             }
             distinct(field: kategoriaRealizacji)

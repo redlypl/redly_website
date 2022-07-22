@@ -41,40 +41,9 @@ const Realizacje = (props) => {
                     nazwaKlienta
                     slug
                     kategoriaRealizacji
-                    kanaly
-                    uslugi
-                    opis {
-                        opis
-                    }
-                    logotypKlienta {
-                        url
-                    }
                     banerProjektu {
                         url
                     }
-                    kilkaSlow {
-                        kilkaSlow
-                    }
-                    banerKlient {
-                        url
-                    }
-                    banerWstep {
-                        url
-                    }
-                    wyzwanie {
-                        wyzwanie
-                    }
-                    rozwizanie {
-                        rozwizanie
-                    }
-                    efekty {
-                        url
-                    }
-                    opinia {
-                        opinia
-                    }
-                    imieNazwisko
-                    stanowisko
                 }
                 }
                 distinct(field: kategoriaRealizacji)
