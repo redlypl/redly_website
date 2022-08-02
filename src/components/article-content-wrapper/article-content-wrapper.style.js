@@ -326,7 +326,7 @@ export const OpinionWrapper = styled.div`
         margin-top: 40px;
     }
     @media (max-width: ${theme.breakpoint.tablet}) {
-        height: 300px;
+        height: auto;
         width: 95%;
         margin-top: 0px;
         margin-bottom: 50px;
