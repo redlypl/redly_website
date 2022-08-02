@@ -33,7 +33,7 @@ const Layout = (props) => {
         <LayoutWrapper>
             <GlobalStyle />
             <Helmet htmlAttributes={{
-                lang: 'en',
+                lang: 'pl',
             }}>
                 {PageDinamicalTitle}
                 <meta
