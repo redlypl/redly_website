@@ -16,6 +16,10 @@ const RealizacjeArticle = ({ data }) => {
         <Layout>
             <Helmet>
                 <title>Realizacja {data.contentfulRealizacje.nazwaKlienta} | Agencja Reklamowa - Redly</title>
+                <meta
+                    name="description"
+                    content={data.contentfulRealizacje.opis.opis}
+                />
             </Helmet>
             <ArticleContentWrapper contentGraph={bodyArticle}/>
             <SocialMediaInset />
