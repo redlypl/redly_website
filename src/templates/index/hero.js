@@ -26,8 +26,8 @@ import {
 } from "../../styles/animations/framer-animations"
 
 const HeroData = {
-  Header: 'Nowoczesna agencja reklamowa ',
-  UnderHeader: 'Jesteśmy agencją reklamową z nowoczesnym spojrzeniem na marketing. Nasze założenia są bardzo proste - Ty zajmiesz się tym na czym najbardziej się znasz, a my sprawimy że odpowiednie osoby dowiedzą się o twojej działalności.',
+  Header: 'Nowoczesna agencja kreatywna ',
+  UnderHeader: 'Jesteśmy agencją kreatywną z nowoczesnym spojrzeniem na marketing. Nasze założenia są bardzo proste - Ty zajmiesz się tym na czym najbardziej się znasz, a my sprawimy że odpowiednie osoby dowiedzą się o twojej działalności.',
   HeroBtn: 'Zobacz naszą ofertę',
 }
 

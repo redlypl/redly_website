@@ -15,7 +15,7 @@ const RealizacjeArticle = ({ data }) => {
     return (
         <Layout>
             <Helmet>
-                <title>Realizacja {data.contentfulRealizacje.nazwaKlienta} | Agencja Reklamowa - Redly</title>
+                <title>Realizacja {data.contentfulRealizacje.nazwaKlienta} | Agencja Kreatywna - Redly</title>
                 <meta
                     name="description"
                     content={data.contentfulRealizacje.opis.opis}
