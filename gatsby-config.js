@@ -10,7 +10,7 @@ if (process.env.STAGING) {
 
 module.exports = {
   siteMetadata: {
-    title: `Redly - Agencja Reklamowa`,
+    title: `Redly - Agencja Kreatywna`,
     siteUrl: `https://www.redly.pl`
   },
   plugins: [
@@ -95,9 +95,9 @@ module.exports = {
           purpose: "any"
         },
       ],
-      "name": "Redly - Agencja Reklamowa",
-      "short_name": `Agencja Reklamowa z nowoczesnym podejściem do marketingu`,
-      "description": 'Jesteśmy agencją reklamową z nowoczesnym spojrzeniem na marketing. Nasze założenia są bardzo proste - Ty zajmiesz się tym na czym najbardziej się znasz, a my sprawimy że odpowiednie osoby dowiedzą się o twojej działalności.',
+      "name": "Redly - Agencja Kreatywna",
+      "short_name": `Agencja Kreatywna z nowoczesnym podejściem do marketingu`,
+      "description": 'Jesteśmy agencją kreatywną z nowoczesnym spojrzeniem na marketing. Nasze założenia są bardzo proste - Ty zajmiesz się tym na czym najbardziej się znasz, a my sprawimy że odpowiednie osoby dowiedzą się o twojej działalności.',
       "orientation": 'any',
       "start_url": `/`,
       "scope": ".",

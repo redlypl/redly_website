@@ -27,7 +27,7 @@ const NotFound = () => {
     return (
         <HeroWrapper>
             <Helmet>
-                <title>Redly - Agencja Reklamowa</title>
+                <title>Redly - Agencja Kreatywna</title>
             </Helmet>
             <Top>
                 <ContentSide>
